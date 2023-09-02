@@ -39,7 +39,9 @@ const Preloader = () => {
           <img src={thirdRow[0].src} alt="image of a tattoo" />
         </div>
       </div>
-      <div className={styles.gradient}></div>
+      <div className={styles.gradient}>
+        <h1>Kanye :(</h1>
+      </div>
     </section>
   );
 };
