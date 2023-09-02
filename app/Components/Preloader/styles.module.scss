@@ -10,29 +10,29 @@
 }
 .tile {
 	display: flex;
-	width: calc(100% + 33vh);
+
    
-    animation: runner 40s linear infinite;
+    animation: runner 65s linear infinite;
     opacity: 0.4;
     gap: 1vw;
 }
 
 .tile:nth-child(3) {
-	animation-duration: 50s;
+	animation-duration: 70s;
    
 
 
 }
 .tile:nth-child(2) {
-	animation-duration: 65;
+	animation-duration: 65s;
     
 }
 .tileImg{
    
 	
-	height: 30vh;
+	height: 33vh;
 	img{
-        height: 29vh;
+        height: 32vh;
         max-width: 60vw;
         border-radius: 10px;
     }
@@ -53,12 +53,34 @@
         font-size: clamp(1.4rem,4vw,8rem);
         color: rgb(255, 255, 255);
         font-weight: 500;
-        } 
-    p{
+        z-index: 4;    
+    } 
+    p {
+        position: relative;
+        margin-top: 2vh;
         color: white;
-        font-size: clamp(1.2rem,4vw,2rem);
-       
-    }
+        font-size: clamp(1.2rem, 4vw, 2rem);
+        z-index: 4;
+        cursor: pointer;
+        
+        &::before {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          background: white;
+          top: 92%;
+          transition: transform 0.3s;
+          transform-origin: 50% 50%;
+          transform: scaleX(0);
+          margin-top: 0.5vh;
+        }
+        
+        &:hover::before {
+          transform: scaleX(1);
+          
+        }
+      }
 }
 .black{
     position: absolute;
@@ -74,7 +96,7 @@
 
 @keyframes runner {
 	to {
-		transform: translateX(-22%);
+		transform: translateX(-220%);
 	}
 }
 
