@@ -6,7 +6,7 @@ import { rotate, slideUp } from "./variants";
 
 import { firstRow, secondRow, thirdRow } from "../../Data/imageData";
 
-const Preloader = ({ setIsLoading }) => {
+const Preloader = ({ setIsLoading, isLoading }) => {
   const [screen, setScreen] = useState(true);
 
   useEffect(() => {
@@ -67,29 +67,31 @@ const Preloader = ({ setIsLoading }) => {
           </div>
         </motion.section>
 
-        <div className={styles.gradient}>
-          <motion.h1
-            key="h1"
-            variants={slideUp}
-            initial="initial"
-            animate="enter"
-            exit="exit"
-          >
-            Kanye
-          </motion.h1>
-          <motion.p
-            key="p"
-            variants={slideUp}
-            initial="initial"
-            animate="enter"
-            exit="exit"
-            onClick={() => {
-              setIsLoading(false);
-            }}
-          >
-            Click to enter
-          </motion.p>
-        </div>
+        {isLoading && (
+          <div className={styles.gradient}>
+            <motion.h1
+              key="h1"
+              variants={slideUp}
+              initial="initial"
+              animate="enter"
+              exit="exit"
+            >
+              Kanye
+            </motion.h1>
+            <motion.p
+              key="p"
+              variants={slideUp}
+              initial="initial"
+              animate="enter"
+              exit="exit"
+              onClick={() => {
+                setIsLoading(false);
+              }}
+            >
+              Click to enter
+            </motion.p>
+          </div>
+        )}
         {screen && <div className={styles.black}></div>}
       </>
       )

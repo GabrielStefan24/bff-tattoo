@@ -95,3 +95,4 @@ export const firstRow = [
     src: "/kanye.jpeg",
   },
 ];
+
