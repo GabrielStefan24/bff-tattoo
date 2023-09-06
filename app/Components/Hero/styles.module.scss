@@ -28,10 +28,8 @@
         z-index: 2;
     }
     .textMask {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
+        display: inline-flex;
         overflow: hidden;
     }
     h1{

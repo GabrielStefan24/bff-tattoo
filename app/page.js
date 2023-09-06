@@ -1,29 +1,30 @@
 "use client";
-import { useState } from "react";
-import Preloader from "./Components/Preloader/Preloader";
+import { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
-import { AnimatePresence } from "framer-motion";
 import Hero from "./Components/Hero/Hero";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
+  const [hideContent, setHideContent] = useState(true);
+  useEffect(() => {
+    const preloaderShown = sessionStorage.getItem("loadingShown");
 
+    if (!preloaderShown) {
+      router.push("/preloader");
+    }
+    setHideContent(false);
+  }, []);
   return (
-    <main
-      className=" text-white"
-      style={{ backgroundColor: isLoading ? "black" : "" }}
-    >
-      <AnimatePresence>
-        {isLoading && (
-          <Preloader
-            setIsLoading={setIsLoading}
-            isLoading={isLoading}
-            key="preloader"
-          />
-        )}
-      </AnimatePresence>
-      {!isLoading && <Navbar />}
-      <Hero isLoading={isLoading} />
-    </main>
+    <>
+      {hideContent ? (
+        <div className="loading-spinner">Loading...</div>
+      ) : (
+        <main className="text-white">
+          <Navbar />
+          <Hero />
+        </main>
+      )}
+    </>
   );
 }

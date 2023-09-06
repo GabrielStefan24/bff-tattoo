@@ -1,13 +1,21 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { rotate, slideUp } from "./variants";
 
-import { firstRow, secondRow, thirdRow } from "../../Data/imageData";
+import { firstRow, secondRow, thirdRow } from "../Data/imageData";
+import { useRouter } from "next/navigation";
 
-const Preloader = ({ setIsLoading, isLoading }) => {
+const Preloader = () => {
   const [screen, setScreen] = useState(true);
+
+  const router = useRouter();
+
+  const goToHome = () => {
+    sessionStorage.setItem("loadingShown", "true");
+    router.push("/");
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -67,31 +75,28 @@ const Preloader = ({ setIsLoading, isLoading }) => {
           </div>
         </motion.section>
 
-        {isLoading && (
-          <div className={styles.gradient}>
-            <motion.h1
-              key="h1"
-              variants={slideUp}
-              initial="initial"
-              animate="enter"
-              exit="exit"
-            >
-              Kanye
-            </motion.h1>
-            <motion.p
-              key="p"
-              variants={slideUp}
-              initial="initial"
-              animate="enter"
-              exit="exit"
-              onClick={() => {
-                setIsLoading(false);
-              }}
-            >
-              Click to enter
-            </motion.p>
-          </div>
-        )}
+        <div className={styles.gradient}>
+          <motion.h1
+            key="h1"
+            variants={slideUp}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+          >
+            Kanye
+          </motion.h1>
+          <motion.p
+            key="p"
+            variants={slideUp}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+            onClick={goToHome}
+          >
+            Click to enter
+          </motion.p>
+        </div>
+
         {screen && <div className={styles.black}></div>}
       </>
       )
