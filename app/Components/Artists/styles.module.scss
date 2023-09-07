@@ -1,0 +1,56 @@
+.artists {
+    height: 100vh;
+    width: 100vw;
+    h2{
+        font-size: clamp(8rem,20vw,30rem);
+        color: white;
+        font-family: serif;
+        font-style: italic;
+        font-family: 'Bilbo Swash Caps', cursive;
+        font-weight: lighter;
+        z-index: 4;
+        position: relative;
+        span{
+            font-size: clamp(10rem,26vw,36rem);
+        }
+    }
+    .imgContainer{
+       
+        height: 50vh;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        @media(max-width:768px){
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 2rem;
+        }
+        img{
+            height: clamp(20vw,30vw,40vw);
+            
+
+            @media(max-width:768px){
+              height: 70vw;
+              width: 60vw;
+              border-radius: 10px;
+            }
+        }
+        .imgPair {
+            position: relative;
+        }
+        
+        .imgMask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1c1c1c;
+        }
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap');

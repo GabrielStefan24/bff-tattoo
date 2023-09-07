@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
-import Hero from "./Components/Hero/Hero";
+import Hero from "./Components/Hero";
 import { useRouter } from "next/navigation";
+import About from "./Components/About";
+import Artists from "./Components/Artists";
 
 export default function Home() {
   const router = useRouter();
@@ -13,18 +15,21 @@ export default function Home() {
     if (!preloaderShown) {
       router.push("/preloader");
     }
-    setHideContent(false);
+    setTimeout(() => {
+      setHideContent(false);
+    }, 200);
   }, []);
   return (
     <>
-      {hideContent ? (
-        <div className="loading-spinner">Loading...</div>
-      ) : (
-        <main className="text-white">
-          <Navbar />
-          <Hero />
-        </main>
-      )}
+      <main
+        className="text-white"
+        style={{ display: hideContent ? "none" : "" }}
+      >
+        <Navbar />
+        <Hero />
+        <About />
+        <Artists />
+      </main>
     </>
   );
 }

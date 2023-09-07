@@ -19,6 +19,7 @@ const Navbar = () => {
         y: "0%",
         duration: 2.5,
         ease: "power4.out",
+        delay: 0.2,
       }
     );
 
