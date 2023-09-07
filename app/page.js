@@ -17,7 +17,7 @@ export default function Home() {
     }
     setTimeout(() => {
       setHideContent(false);
-    }, 200);
+    }, 400);
   }, []);
   return (
     <>

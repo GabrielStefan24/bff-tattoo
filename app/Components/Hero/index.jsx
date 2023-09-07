@@ -1,6 +1,6 @@
 "use client";
 import styles from "./styles.module.scss";
-import { useRef, useEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 
 const Hero = () => {
@@ -8,11 +8,11 @@ const Hero = () => {
   const coverRef = useRef(null);
   const textRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.to(coverRef.current, {
-      duration: 2.5,
+      duration: 4,
       x: "-100%",
-      ease: "power4.out",
+      ease: "power3.out",
       delay: 0.2,
     });
     gsap.fromTo(
