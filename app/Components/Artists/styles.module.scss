@@ -24,10 +24,11 @@
             align-items: center;
             img{
                 height: clamp(20vw,30vw,40vw);
+                border-radius: 10%;
                 @media(max-width:768px){
                   height: 80vw;
                   width: 80vw;
-                  border-radius: 5px;
+                  
                 }
             }
             a{
@@ -35,6 +36,10 @@
                 font-family: Basement;
                 margin-top: 1vh;
                 font-size: clamp(1rem,3vw,3rem);
+                transition: all 0.5s;
+                &:hover{
+                    color: #ff4d00;
+                }
             }
             
         }

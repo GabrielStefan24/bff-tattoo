@@ -21,7 +21,7 @@ const Artists = () => {
         scrollTrigger: {
           trigger: img1Ref.current,
           start: "bottom bottom",
-          end: "bottom top",
+          end: "center top",
           scrub: true,
         },
       });
@@ -33,7 +33,7 @@ const Artists = () => {
         scrollTrigger: {
           trigger: img1Ref.current,
           start: "top bottom",
-          end: "bottom top",
+          end: "center top",
           scrub: true,
         },
       });
@@ -45,7 +45,7 @@ const Artists = () => {
         scrollTrigger: {
           trigger: img1Ref.current,
           start: "top bottom",
-          end: "bottom top",
+          end: "center top",
           scrub: true,
         },
       });
