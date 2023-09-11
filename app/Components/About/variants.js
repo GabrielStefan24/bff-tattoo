@@ -8,16 +8,3 @@ export const slideRight = {
   },
 };
 
-export const rotate = {
-  initial: {
-    rotate: 20,
-    x: "30%",
-    y: "-10%",
-  },
-  enter: {
-    rotate: 0,
-    x: "30%",
-    y: "-10%",
-    transition: { duration: 1.5, ease: [0.61, 1, 0.88, 1] },
-  },
-};

@@ -1,90 +1,22 @@
-.section{
-    height: 80vh;
-
-   .container{
-       height: clamp(35vh,55vh,65vh);
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        width: 50%;
-        z-index: 1;
-        
-        position: relative;
-        background-color: #181818;
-        padding-left: clamp(4rem, 4vw, 6rem);
-        padding-right: clamp(4rem, 4vw, 6rem);
+.about{
+    margin-top: 5vh;
+    .aboutText{
+        padding: 1rem;
         color: white;
-       
-      
-    
-        h2{
-            text-transform: uppercase;
-            font-size: clamp(2.5rem,5vw,6rem);
-            letter-spacing: -0.1vw;
-        }
-        p{
-            color : #676767;
-            padding: 4vh 0;
-            font-size: clamp(0.9rem,1vw,1.2rem);
-    
-        }
-        a{
-            align-self: flex-start;
-            text-decoration: none;
-            color: white;
-            position: relative;
-            font-size: clamp(0.8rem,1vw,1.2rem);
-            &::before {
-                content: "";
-                position: absolute;
-                height: 1px;
-                width: 100%;
-                background: white;
-                top: 92%;
-                transition: transform 0.3s;
-                transform-origin: 50% 50%;
-                transform: scaleX(0);
-                margin-top: 0.5vh;
-              }
-              
-              &:hover::before {
-                transform: scaleX(1);
-                
-              }
-        }
-       
-    
-    }
-    
-    
-    .imgContainer {
-        transform: translate(50%,-30%);
-      
-        height: 63vh;
-        width: 100%;
-        img{
-        z-index: 10;
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 60vh;
-        width: 100%;
-        object-fit: cover; 
-        object-position: center; 
-        }
-        .imgMask{
-            position: relative;
-            width: calc(100% + 3vh);
-            height: calc(100% + 3vh);
-            background-color: #1c1c1c;
-         
-           
-           
-            z-index: 11;
-           
+        font-size: max(26px,2.9166666667vw);
+        line-height: 1.1964285714;
+        letter-spacing: -.005em;
+        z-index: 3;
+        position: relative;
+     }
+     span{
+        display: block;
+        width: 65%;
+        margin-left: auto;
+        @media(max-width:1024px){
+            width: 100%;
+            display: inline
+            
         }
     }
-        
-  
-
 }

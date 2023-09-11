@@ -5,11 +5,21 @@ import Hero from "./Components/Hero";
 import { useRouter } from "next/navigation";
 import About from "./Components/About";
 import Artists from "./Components/Artists";
+import Lenis from "@studio-freight/lenis";
 
 export default function Home() {
   const router = useRouter();
   const [hideContent, setHideContent] = useState(true);
   useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
     const preloaderShown = sessionStorage.getItem("loadingShown");
 
     if (!preloaderShown) {
@@ -21,10 +31,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <main
-        className="text-white"
-        style={{ display: hideContent ? "none" : "" }}
-      >
+      <main style={{ display: hideContent ? "none" : "" }}>
         <Navbar />
         <Hero />
         <About />

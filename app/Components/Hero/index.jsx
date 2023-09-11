@@ -10,7 +10,7 @@ const Hero = () => {
 
   useLayoutEffect(() => {
     gsap.to(coverRef.current, {
-      duration: 4,
+      duration: 2,
       x: "-100%",
       ease: "power3.out",
       delay: 0.2,
@@ -33,6 +33,7 @@ const Hero = () => {
       <div className={styles.textMask}>
         <h1 ref={textRef}>BFF TATTOO</h1>
       </div>
+      <h2>we make cool shit that lasts forever.</h2>
     </section>
   );
 };
