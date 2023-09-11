@@ -17,11 +17,10 @@ const About = () => {
           <p className={styles.aboutText}>
             We are a team of specialists, crafting designs across a spectrum of
             styles and complexities. We don’t just ink, we are intentional about
-            drawing with
+            drawing with surgical precision, creating exceptional masterpieces
             <span className={styles.aboutText}>
-              surgical precision, creating exceptional masterpieces on skin. We
-              push the boundaries of tattoo artistry, and then venture even
-              further, just for the thrill of it.
+              on skin. We push the boundaries of tattoo artistry, and then
+              venture even further, just for the thrill of it.
             </span>
           </p>
         </div>

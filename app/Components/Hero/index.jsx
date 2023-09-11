@@ -29,7 +29,13 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.cover} ref={coverRef}></div>
-      <img src="/hero.jpg" alt="Hero image" ref={imageRef} />
+      <img
+        data-scroll
+        data-scroll-speed="0.2"
+        src="/hero.jpg"
+        alt="Hero image"
+        ref={imageRef}
+      />
       <div className={styles.textMask}>
         <h1 ref={textRef}>BFF TATTOO</h1>
       </div>
