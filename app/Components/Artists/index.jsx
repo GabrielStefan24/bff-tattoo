@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
-import { useRef, useEffect } from "react";
-import Lenis from "@studio-freight/lenis";
+import { useRef, useLayoutEffect } from "react";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -9,28 +9,32 @@ gsap.registerPlugin(ScrollTrigger);
 const Artists = () => {
   const imgRef = useRef(null);
 
-  useEffect(() => {
-    const imagePairs = imgRef.current.children;
-    for (let i = 0; i < imagePairs.length; i++) {
-      const image = imagePairs[i].querySelector("img");
-      let animationProps;
+  useLayoutEffect(() => {
+    setTimeout(() => {
+      if (!imgRef.current) return;
 
-      if (i === 0) {
-        animationProps = { yPercent: -100 };
-      } else {
-        animationProps = { xPercent: -100 };
+      const imagePairs = imgRef.current.children;
+      for (let i = 0; i < imagePairs.length; i++) {
+        const image = imagePairs[i].querySelector("img");
+        let animationProps;
+
+        if (i === 0) {
+          animationProps = { yPercent: -100 };
+        } else {
+          animationProps = { xPercent: -100 };
+        }
+
+        gsap.from(image, {
+          ...animationProps,
+          scrollTrigger: {
+            trigger: imagePairs[i],
+            start: "top bottom",
+            end: "bottom bottom",
+            scrub: true,
+          },
+        });
       }
-
-      gsap.from(image, {
-        ...animationProps,
-        scrollTrigger: {
-          trigger: imagePairs[i],
-          start: "top bottom",
-          end: "bottom bottom",
-          scrub: true,
-        },
-      });
-    }
+    }, 300);
   }, []);
 
   return (
