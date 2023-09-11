@@ -5,11 +5,25 @@ import Hero from "./Components/Hero";
 import { useRouter } from "next/navigation";
 import About from "./Components/About";
 import Artists from "./Components/Artists";
-
+import { useLayoutEffect } from "react";
+import Lenis from "@studio-freight/lenis";
 
 export default function Home() {
   const router = useRouter();
   const [hideContent, setHideContent] = useState(true);
+
+  useLayoutEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  });
+
   useEffect(() => {
     const preloaderShown = sessionStorage.getItem("loadingShown");
 

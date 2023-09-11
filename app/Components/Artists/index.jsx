@@ -10,7 +10,7 @@ const Artists = () => {
   const imgRef = useRef(null);
 
   useLayoutEffect(() => {
-    setTimeout(() => {
+   
       if (!imgRef.current) return;
 
       const imagePairs = imgRef.current.children;
@@ -34,7 +34,6 @@ const Artists = () => {
           },
         });
       }
-    }, 300);
   }, []);
 
   return (
