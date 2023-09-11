@@ -17,7 +17,7 @@ const Artists = () => {
     let ctx = gsap.context(() => {
       gsap.from(img1Ref.current, {
         y: "-100%",
-
+        opacity: 0,
         scrollTrigger: {
           trigger: img1Ref.current,
           start: "bottom bottom",
@@ -29,6 +29,7 @@ const Artists = () => {
         x: "-100%",
         y: "150%",
         scale: 0,
+        opacity: 0,
 
         scrollTrigger: {
           trigger: img1Ref.current,
@@ -41,6 +42,7 @@ const Artists = () => {
         x: "-150%",
         y: "150%",
         scale: 0,
+        opacity: 0,
 
         scrollTrigger: {
           trigger: img1Ref.current,
