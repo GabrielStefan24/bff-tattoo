@@ -43,7 +43,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.158), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,7 +57,7 @@
         margin-bottom: 2vh;   
         line-height: 0.8;
         text-transform: uppercase;
-       
+        font-family: Basement;
         letter-spacing: 0.03em;
     } 
     button {
@@ -66,6 +66,7 @@
         color: #eeeeeec9;
         font-size: clamp(1.2rem, 4vw, 2rem);
         z-index: 4;
+        font-family: Basement;
         
         
   

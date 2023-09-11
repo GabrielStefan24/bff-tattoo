@@ -17,6 +17,13 @@ export default function Home() {
       const locomotiveScroll = new LocomotiveScroll({
         smooth: true,
         lerp: 0.1,
+        smartphone: {
+          smooth: true,
+        },
+        tablet: {
+          smooth: true,
+          breakpoint: 768,
+        },
       });
     })();
   });
