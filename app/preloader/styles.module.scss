@@ -1,18 +1,18 @@
 .tiles {
 	
-	height: 100vh;
+	height: 91vh;
 	display: flex;
     width: 100vw;
 	flex-direction: column;
 	justify-content: flex-start;
-    margin-top: 1vh;
+    margin-bottom: 1vh;
  
 }
 .tile {
 	display: flex;
 
    
-    animation: runner 65s linear infinite;
+    animation: runner 80s linear infinite;
     opacity: 0.4;
     gap: 1vw;
 }
@@ -30,11 +30,11 @@
 .tileImg{
    
 	
-	height: 33vh;
+	height: 30vh;
 	img{
-        height: 32vh;
+        height: 29vh;
         max-width: 60vw;
-        border-radius: 10px;
+        border-radius: 20px;
     }
 }
 .gradient{
@@ -43,43 +43,32 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: linear-gradient(to top, rgb(8, 8, 8), rgba(0, 0, 0, 0));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.158), rgba(0, 0, 0, 0));
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
     h1{
-        font-size: clamp(1.4rem,4vw,8rem);
-        color: rgb(255, 255, 255);
+        font-size: clamp(2rem,4vw,8rem);
+        color: #eeeeeec9;
         font-weight: 500;
-        z-index: 4;    
+        z-index: 4; 
+        margin-bottom: 2vh;   
+        line-height: 0.8;
+        text-transform: uppercase;
+       
+        letter-spacing: 0.03em;
     } 
-    p {
+    button {
         position: relative;
         margin-top: 2vh;
-        color: white;
+        color: #eeeeeec9;
         font-size: clamp(1.2rem, 4vw, 2rem);
         z-index: 4;
-        cursor: pointer;
         
-        &::before {
-          content: "";
-          position: absolute;
-          height: 1px;
-          width: 100%;
-          background: white;
-          top: 92%;
-          transition: transform 0.3s;
-          transform-origin: 50% 50%;
-          transform: scaleX(0);
-          margin-top: 0.5vh;
-        }
         
-        &:hover::before {
-          transform: scaleX(1);
-          
-        }
+  
       }
 }
 .black{
@@ -90,13 +79,13 @@
     left: 0;
     background-color: #000;
     z-index: 3;
-    transition: all 0.5ms;
+    transition: all 0.9ms;
 }
 
 
 @keyframes runner {
 	to {
-		transform: translateX(-220%);
+		transform: translateX(-180%);
 	}
 }
 

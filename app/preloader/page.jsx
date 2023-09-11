@@ -6,6 +6,7 @@ import { rotate, slideUp } from "./variants";
 
 import { firstRow, secondRow, thirdRow } from "../Data/imageData";
 import { useRouter } from "next/navigation";
+import Button from "./(button)/Button";
 
 const Preloader = () => {
   const [screen, setScreen] = useState(true);
@@ -83,18 +84,27 @@ const Preloader = () => {
             animate="enter"
             exit="exit"
           >
-            Kanye
+            Black Flag
           </motion.h1>
-          <motion.p
-            key="p"
+          <motion.h1
+            key="h1"
+            variants={slideUp}
+            initial="initial"
+            animate="enter"
+            exit="exit"
+          >
+            Tatto Studio
+          </motion.h1>
+          <motion.div
+            key="button"
             variants={slideUp}
             initial="initial"
             animate="enter"
             exit="exit"
             onClick={goToHome}
           >
-            Click to enter
-          </motion.p>
+            <Button />
+          </motion.div>
         </div>
 
         {screen && <div className={styles.black}></div>}
