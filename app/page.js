@@ -5,7 +5,7 @@ import Hero from "./Components/Hero";
 import { useRouter } from "next/navigation";
 import About from "./Components/About";
 import Artists from "./Components/Artists";
-
+import LocomotiveScroll from "locomotive-scroll";
 
 export default function Home() {
   const router = useRouter();
@@ -15,6 +15,7 @@ export default function Home() {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
       const locomotiveScroll = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
         smooth: true,
         lerp: 0.1,
         smartphone: {
@@ -26,9 +27,7 @@ export default function Home() {
         },
       });
     })();
-  });
 
-  useEffect(() => {
     const preloaderShown = sessionStorage.getItem("loadingShown");
 
     if (!preloaderShown) {

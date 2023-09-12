@@ -1,22 +1,45 @@
-.about{
+.about {
     margin-top: 5vh;
-    .aboutText{
+
+    .aboutText {
         padding: 1rem;
         color: white;
-        font-size: max(26px,2.9166666667vw);
+        font-size: max(14px, 2.8766666667vw);
         line-height: 1.1964285714;
-        letter-spacing: -.005em;
+        letter-spacing: -0.02em;
         z-index: 3;
         position: relative;
-     }
-     span{
-        display: block;
-        width: 65%;
-        margin-left: auto;
-        @media(max-width:1024px){
-            width: 100%;
-            display: inline
+        display: flex;
+        flex-wrap: wrap;
+
+        span {
+            opacity: 0.2; 
             
+        }
+
+        p {
+            margin-right: 0.5vw;
+            letter-spacing: 0.01vw;
+        }
+
+        .aboutSpan {
+            font-size: max(14px, 2.8766666667vw);
+            line-height: 1.1964285714;
+            letter-spacing: -.005em;
+            z-index: 3;
+            display: flex;
+            flex-wrap: wrap;
+            width: 65%;
+            margin-left: auto;
+
+            @media(max-width: 1024px) {
+                width: 100%;
+            }
+
+            span {
+                opacity: 0.2; 
+              
+            }
         }
     }
 }

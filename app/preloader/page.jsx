@@ -93,7 +93,7 @@ const Preloader = () => {
             animate="enter"
             exit="exit"
           >
-            Tatto Studio
+            Tattoo Studio
           </motion.h1>
           <motion.div
             key="button"

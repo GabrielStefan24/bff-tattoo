@@ -18,34 +18,71 @@
             align-items: center;
             gap: 2rem;
         }
-        .imgPair{
+        .imgPair {
             display: flex;
             flex-direction: column;
             align-items: center;
-           
-            img{
-                height: clamp(20vw,30vw,40vw);
-                border-radius: 10%;
+            position: relative;
+        
+            a {
+                position: relative; 
+                display: block; 
+            }
+        
+            a:hover::after {
                 opacity: 1;
+            }
+        
+            a::after {
+                content: "";
+                top: 0;
+                left: 0;
+                background: linear-gradient(180deg, rgba(255, 147, 173, 0) 0%, rgba(126, 75, 27, 0.658) 100%);
+                z-index: 21;
+                transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+                opacity: 0;
+        
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        
+            img {
+                height: clamp(20vw, 30vw, 40vw);
+                border-radius: 1%;
+                opacity: 1;
+                filter: grayscale(100%) brightness(0.6);
+               
+                display: block; 
                 @media(max-width:768px){
-                  height: 80vw;
-                  width: 80vw;
-                  
-                }
+                    height: 80vw;
+                    width: 80vw;
+                    
+                  }
             }
-            a{
+            .artistBio{
+                position: absolute;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
                 color: white;
-                font-family: Basement;
-                margin-top: 1vh;
-                font-size: clamp(1rem,3vw,3rem);
-                transition: all 0.5s;
-                &:hover{
-                    color: #ff4d00;
+                bottom: 0;
+                width: 100%;
+                padding: 1rem;
+
+                p{
+                    color: white;
+                    z-index: 22;
+                    font-size: clamp(0.7rem, 1.5vw, 1.6rem);
+                }
+                p:first-of-type {
+                    font-size: clamp(1rem, 2vw, 2rem);
                 }
             }
-            
         }
-     
-     
-
-    }}
+            
+       
+             
+            
+     }}
