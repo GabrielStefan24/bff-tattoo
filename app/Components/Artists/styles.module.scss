@@ -20,6 +20,7 @@
             justify-content: flex-start;
             align-items: center;
             gap: 2rem;
+            height: 100vh;
         }
         .imgPair {
             display: flex;
@@ -58,9 +59,10 @@
                 filter: grayscale(100%) brightness(0.6);
                
                 display: block; 
-                @media(max-width:768px){
-                    height: 80vw;
-                    width: 80vw;
+                @media(max-width:912px){
+                    height: 35vh;
+                    width: 100%;
+                    margin-bottom: 0.5rem;
                     
                   }
             }
