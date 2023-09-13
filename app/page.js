@@ -7,29 +7,28 @@ import About from "./Components/About";
 import Artists from "./Components/Artists";
 import Studio from "./Components/Studio";
 import Gallery from "./Components/Gallery";
-import { useRef } from "react";
+import Lenis from "@studio-freight/lenis";
 
 export default function Home() {
   const router = useRouter();
   const [hideContent, setHideContent] = useState(true);
-  const container = useRef(null);
 
   useEffect(() => {
-    (async () => {
-      const LocomotiveScroll = (await import("locomotive-scroll")).default;
-      const locomotiveScroll = new LocomotiveScroll({
-        el: container.current,
-        smooth: true,
-        lerp: 0.15,
-        smartphone: {
-          smooth: true,
-        },
-        tablet: {
-          smooth: true,
-          breakpoint: 768,
-        },
-      });
-    })();
+    const lenis = new Lenis({
+      lerp: 0.05,
+      easing: function (t) {
+        return t < 0.5
+          ? 4 * t * t * t
+          : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      },
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
 
     const preloaderShown = sessionStorage.getItem("loadingShown");
 
@@ -42,7 +41,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <main ref={container} style={{ display: hideContent ? "none" : "" }}>
+      <main style={{ display: hideContent ? "none" : "" }}>
         <Navbar />
         <Hero />
         <About />

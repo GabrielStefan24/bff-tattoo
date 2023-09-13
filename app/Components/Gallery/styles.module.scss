@@ -1,4 +1,108 @@
 .container{
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
+    position: relative;
+        a{  
+            text-decoration: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-transform: uppercase;
+            font-family: Basement;
+            line-height: 110%;
+            letter-spacing: 0.2rem;
+            color: white;
+            font-size: clamp(1rem,3vw,6rem);
+        }
+        .plane{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            
+           
+
+            img{
+                position: absolute;
+                width: clamp(130px,12vw,20vw);
+                border-radius: 5%;
+                
+            }
+
+            &:nth-of-type(1) {
+                filter: brightness(0.8);
+                
+                img{
+                    &:nth-of-type(1){
+                        left: 75%;
+                        top: 50%;
+                        @media(max-width:768px) {
+                            left: 100%;
+                            top: 100%;
+                        }
+                    }
+                    &:nth-of-type(2){
+                        left: 25%;
+                        top: 55%;
+                        @media(max-width:768px) {
+                            left: 25%;
+                            top: 60%;
+                        }
+                    }
+                    &:nth-of-type(3){
+                        left: 5%;
+                        top: 45%;
+                        @media(max-width:768px) {
+                            left: 5%;
+                            top: 55%;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(2){
+                filter: brightness(0.7);
+                img{
+                    &:nth-of-type(1){
+                        left: 25%;
+                        top: 0;
+                        @media(max-width:768px) {
+                            left: 100%;
+                            top: 100%;
+                        }
+                    }
+                    &:nth-of-type(2){
+                        left: 50%;
+                        top: 0%;
+                        @media(max-width:768px) {
+                            left: 40%;
+                            top: 15%;
+                        }
+                    }
+                    &:nth-of-type(3){
+                        left: 55%;
+                        top: 65%;
+                    }
+                }
+              }
+              &:nth-of-type(3){
+                filter: brightness(0.9);
+                img{
+                    &:nth-of-type(1){
+                        left: 10%;
+                        top: 0%;
+                    }
+                    &:nth-of-type(2){
+                        left: 80%;
+                        top: 0%;
+                        @media(max-width:768px) {
+                            left: 60%;
+                            top: 20%;
+                        }
+                    }
+                
+                   
+                }     
+            }
+        }
 }

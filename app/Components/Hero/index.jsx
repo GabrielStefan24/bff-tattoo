@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 
+
 const Hero = () => {
   const imageRef = useRef(null);
   const coverRef = useRef(null);
@@ -10,7 +11,7 @@ const Hero = () => {
 
   useLayoutEffect(() => {
     gsap.to(coverRef.current, {
-      duration: 2,
+      duration: 3,
       x: "-100%",
       ease: "power3.out",
       delay: 0.2,
@@ -29,13 +30,7 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.cover} ref={coverRef}></div>
-      <img
-        data-scroll
-        data-scroll-speed="0.2"
-        src="/hero.jpg"
-        alt="Hero image"
-        ref={imageRef}
-      />
+      <img src="/hero.jpg" alt="Hero image" ref={imageRef} />
       <div className={styles.textMask}>
         <h1 ref={textRef}>BFF TATTOO</h1>
       </div>

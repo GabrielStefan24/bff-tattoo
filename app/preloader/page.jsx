@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import styles from "./styles.module.scss";
 import { motion } from "framer-motion";
 import { rotate, slideUp } from "./variants";
-
 import { firstRow, secondRow, thirdRow } from "../Data/imageData";
 import { useRouter } from "next/navigation";
 import Button from "./(button)/Button";
