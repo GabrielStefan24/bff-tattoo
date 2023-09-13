@@ -7,7 +7,7 @@ const Studio = () => {
   const stickyMask = useRef(null);
 
   const initialMaskSize = 0.8;
-  const targetMaskSize = 30;
+  const targetMaskSize = 40;
   const easing = 0.15;
   let easedScrollProgress = 0;
 
