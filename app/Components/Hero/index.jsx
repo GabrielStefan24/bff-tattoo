@@ -11,10 +11,10 @@ const Hero = () => {
 
   useLayoutEffect(() => {
     gsap.to(coverRef.current, {
-      duration: 3,
+      duration: 2,
       x: "-100%",
       ease: "power3.out",
-      delay: 0.2,
+      delay: 0.8,
     });
     gsap.fromTo(
       textRef.current,
