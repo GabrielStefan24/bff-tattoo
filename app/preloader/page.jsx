@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import Button from "./(button)/Button";
 
 const Preloader = () => {
-  const [screen, setScreen] = useState(true);
+ 
 
   const router = useRouter();
 
@@ -17,11 +17,7 @@ const Preloader = () => {
     router.push("/");
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setScreen(false);
-    }, 1000);
-  }, []);
+
   return (
     <>
       (
@@ -106,7 +102,7 @@ const Preloader = () => {
           </motion.div>
         </div>
 
-        {screen && <div className={styles.black}></div>}
+       
       </>
       )
     </>
