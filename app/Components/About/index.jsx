@@ -9,8 +9,11 @@ const About = () => {
   const container = useRef(null);
 
   useEffect(() => {
+    
     gsap.registerPlugin(ScrollTrigger);
-    createAnimations();
+    if (typeof window !== "undefined") {
+      createAnimations();
+    }
   }, []);
 
   const createAnimations = () => {
@@ -28,6 +31,7 @@ const About = () => {
       },
     });
   };
+
 
   const phrase1 =
     "We are a team of specialists, crafting designs across a spectrum of styles and complexities. We don’t just ink, we are intentional about drawing with surgical precision, creating exceptional masterpieces on skin.";

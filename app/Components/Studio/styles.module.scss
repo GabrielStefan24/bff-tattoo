@@ -1,0 +1,36 @@
+.main{
+    margin-bottom: 50vh;
+   }
+  
+  .container{
+    position: relative;
+    height: 150vh;
+    
+  }
+  
+  .stickyMask{
+    display: flex;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    
+    align-items: center;
+    justify-content: center;
+    mask-image: url('/studio.svg');
+    -webkit-mask-image: url("/studio.svg");
+    mask-position: 52.35% center;
+    -webkit-mask-position: 56.5% center;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+  
+  }
+  
+  .stickyMask img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1/1;
+    
+  }

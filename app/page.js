@@ -5,7 +5,8 @@ import Hero from "./Components/Hero";
 import { useRouter } from "next/navigation";
 import About from "./Components/About";
 import Artists from "./Components/Artists";
-import LocomotiveScroll from "locomotive-scroll";
+import Studio from "./Components/Studio";
+import Gallery from "./Components/Gallery";
 
 export default function Home() {
   const router = useRouter();
@@ -44,6 +45,8 @@ export default function Home() {
         <Hero />
         <About />
         <Artists />
+        <Studio />
+        <Gallery />
       </main>
     </>
   );
