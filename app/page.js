@@ -7,18 +7,20 @@ import About from "./Components/About";
 import Artists from "./Components/Artists";
 import Studio from "./Components/Studio";
 import Gallery from "./Components/Gallery";
+import { useRef } from "react";
 
 export default function Home() {
   const router = useRouter();
   const [hideContent, setHideContent] = useState(true);
+  const container = useRef(null);
 
   useEffect(() => {
     (async () => {
       const LocomotiveScroll = (await import("locomotive-scroll")).default;
       const locomotiveScroll = new LocomotiveScroll({
-        el: document.querySelector("[data-scroll-container]"),
+        el: container.current,
         smooth: true,
-        lerp: 0.1,
+        lerp: 0.15,
         smartphone: {
           smooth: true,
         },
@@ -40,7 +42,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <main style={{ display: hideContent ? "none" : "" }}>
+      <main ref={container} style={{ display: hideContent ? "none" : "" }}>
         <Navbar />
         <Hero />
         <About />
