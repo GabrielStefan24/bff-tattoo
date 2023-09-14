@@ -6,10 +6,12 @@
 	flex-direction: column;
 	justify-content: flex-start;
     margin-bottom: 1vh;
+    overflow-x:hidden
  
 }
 .tile {
 	display: flex;
+   
 
    
     animation: runner 80s linear infinite;
@@ -35,6 +37,7 @@
         height: 29vh;
         max-width: 60vw;
         border-radius: 20px;
+        aspect-ratio: 1/1;
     }
 }
 .gradient{

@@ -34,7 +34,7 @@ const Hero = () => {
       <div className={styles.textMask}>
         <h1 ref={textRef}>BFF TATTOO</h1>
       </div>
-      <h2>we make cool shit that lasts forever.</h2>
+      <h2>we make cool art that lasts forever.</h2>
     </section>
   );
 };

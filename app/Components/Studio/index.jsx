@@ -46,7 +46,7 @@ const Studio = () => {
     <main className={styles.main}>
       <div ref={container} className={styles.container}>
         <div ref={stickyMask} className={styles.stickyMask}>
-          <img src="/studio4.jpg" alt="Photo of the studio" />
+          <img src="/studio4.webp" alt="Photo of the studio" />
         </div>
       </div>
     </main>

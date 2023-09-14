@@ -8,12 +8,13 @@ import Artists from "./Components/Artists";
 import Studio from "./Components/Studio";
 import Gallery from "./Components/Gallery";
 import Lenis from "@studio-freight/lenis";
-import { gsap, ScrollTrigger } from "gsap";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 export default function Home() {
   const router = useRouter();
   const [hideContent, setHideContent] = useState(true);
-
+  
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 

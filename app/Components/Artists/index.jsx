@@ -1,52 +1,66 @@
+"use client";
 
-'use client'
 import styles from "./styles.module.scss";
 import { useRef, useEffect } from "react";
-import { gsap, ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Artists = () => {
+  const container = useRef(null);
   const pair1Ref = useRef(null);
   const pair2Ref = useRef(null);
   const pair3Ref = useRef(null);
-
+  gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: pair1Ref.current,
-        start: "top bottom",
-        end: "center top",
-        scrub: 0.5
-      }
-    });
+    let ctx = gsap.context(() => {
+      gsap.from(pair1Ref.current, {
+        y: "-100%",
+        opacity: 0,
+        scrollTrigger: {
+          trigger: pair1Ref.current,
+          start: "bottom bottom",
+          end: "center top",
+          scrub: 0.5,
+        },
+      });
+      gsap.from(pair2Ref.current, {
+        x: "-100%",
+        y: "150%",
+        scale: 0,
+        opacity: 0,
 
-    tl.from(pair1Ref.current, {
-      y: "-100%",
-      opacity: 0,
-    })
-    .from(pair2Ref.current, {
-      x: "-100%",
-      y: "150%",
-      scale: 0,
-      opacity: 0,
-    })
-    .from(pair3Ref.current, {
-      x: "-150%",
-      y: "150%",
-      scale: 0,
-      opacity: 0,
-    });
+        scrollTrigger: {
+          trigger: pair1Ref.current,
+          start: "top bottom",
+          end: "center top",
+          scrub: 0.5,
+        },
+      });
+      gsap.from(pair3Ref.current, {
+        x: "-150%",
+        y: "150%",
+        scale: 0,
+        opacity: 0,
 
-    return () => {
-      // Cleanup if the component is unmounted
-      if (tl) tl.kill();
-    };
-  }, []);
+        scrollTrigger: {
+          trigger: pair1Ref.current,
+          start: "top bottom",
+          end: "center top",
+          scrub: 0.5,
+        },
+      });
+
+      return () => {
+        ctx.revert();
+      };
+    });
+  });
 
   return (
     <section className={styles.artists}>
-      <div className={styles.imgContainer}>
+      <div className={styles.imgContainer} ref={container}>
         <div className={styles.imgPair} ref={pair1Ref}>
-          <a href="https://www.instagram.com/ed_does" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/ed_does" target="_blanc">
             <img src="/artist3.jpg" alt="photo of Eduard Stancu" />
           </a>
           <div className={styles.artistBio}>
@@ -55,20 +69,20 @@ const Artists = () => {
           </div>
         </div>
         <div className={styles.imgPair} ref={pair2Ref}>
-          <a href="https://www.instagram.com/russetattoo" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/russetattoo" target="_blanc">
             <img src="/artist3.jpg" alt="photo of Radu" />
           </a>
           <div className={styles.artistBio}>
-            <p>Radu</p>
+            <p>Eduard Stancu</p>
             <p>Black & Grey</p>
           </div>
         </div>
         <div className={styles.imgPair} ref={pair3Ref}>
-          <a href="https://www.instagram.com/sevilens_craft" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/sevilens_craft" target="_blanc">
             <img src="/artist3.jpg" alt="photo of Mihaela" />
           </a>
           <div className={styles.artistBio}>
-            <p>Mihaela</p>
+            <p>Eduard Stancu</p>
             <p>Black & Grey</p>
           </div>
         </div>
