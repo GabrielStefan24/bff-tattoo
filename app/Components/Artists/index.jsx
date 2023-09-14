@@ -56,7 +56,7 @@ const Artists = () => {
         ctx.revert();
       };
     });
-  });
+  },[]);
 
   return (
     <section className={styles.artists}>
