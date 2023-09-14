@@ -22,7 +22,7 @@ const Artists = () => {
           trigger: pair1Ref.current,
           start: "bottom bottom",
           end: "center top",
-          scrub: true,
+          scrub: 0.5,
         },
       });
       gsap.from(pair2Ref.current, {
@@ -35,7 +35,7 @@ const Artists = () => {
           trigger: pair1Ref.current,
           start: "top bottom",
           end: "center top",
-          scrub: true,
+          scrub: 0.5,
         },
       });
       gsap.from(pair3Ref.current, {
@@ -48,7 +48,7 @@ const Artists = () => {
           trigger: pair1Ref.current,
           start: "top bottom",
           end: "center top",
-          scrub: true,
+          scrub: 0.5,
         },
       });
 
