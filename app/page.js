@@ -16,23 +16,21 @@ export default function Home() {
   const [hideContent, setHideContent] = useState(true);
   
   useEffect(() => {
-    // gsap.registerPlugin(ScrollTrigger);
+    const lenis = new Lenis({
+      lerp: 0.05,
+      easing: function (t) {
+        return t < 0.5
+          ? 4 * t * t * t
+          : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      },
+    });
 
-    // const lenis = new Lenis({
-    //   lerp: 0.05,
-    //   easing: function (t) {
-    //     return t < 0.5
-    //       ? 4 * t * t * t
-    //       : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-    //   },
-    // });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-    // function raf(time) {
-    //   lenis.raf(time);
-    //   requestAnimationFrame(raf);
-    // }
-
-    // requestAnimationFrame(raf);
+    requestAnimationFrame(raf);
 
     const preloaderShown = sessionStorage.getItem("loadingShown");
 
@@ -44,12 +42,8 @@ export default function Home() {
       setHideContent(false);
     }, 700);
 
-    // Forcing ScrollTrigger to refresh after everything's set up
-    ScrollTrigger.refresh(true);
-
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
+  
+   
   }, []);
   
   return (
