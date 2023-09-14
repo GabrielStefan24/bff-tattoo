@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 
 const Studio = () => {
@@ -7,20 +7,9 @@ const Studio = () => {
   const stickyMask = useRef(null);
 
   const initialMaskSize = 1;
-  const targetMaskSize = 40;
+  const targetMaskSize = 20;
   const easing = 0.15;
   let easedScrollProgress = 0;
-
-  useEffect(() => {
-    requestAnimationFrame(animate);
-  }, []);
-
-  const animate = () => {
-    const maskSizeProgress = targetMaskSize * getScrollProgress();
-    stickyMask.current.style.webkitMaskSize =
-      (initialMaskSize + maskSizeProgress) * 100 + "%";
-    requestAnimationFrame(animate);
-  };
 
   const getScrollProgress = () => {
     const scrollProgress =
@@ -30,6 +19,28 @@ const Studio = () => {
     easedScrollProgress += delta * easing;
     return easedScrollProgress;
   };
+
+  const updateMaskSize = () => {
+    const maskSizeProgress = targetMaskSize * getScrollProgress();
+    const newSize = (initialMaskSize + maskSizeProgress) * 100 + "%";
+    stickyMask.current.style.maskSize = newSize;
+    stickyMask.current.style.webkitMaskSize = newSize;
+  };
+
+  useEffect(() => {
+    let animationFrame;
+    const handleScroll = () => {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = requestAnimationFrame(updateMaskSize);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cancelAnimationFrame(animationFrame);
+    };
+  }, []);
 
   return (
     <main className={styles.main}>
@@ -41,4 +52,5 @@ const Studio = () => {
     </main>
   );
 };
+
 export default Studio;
