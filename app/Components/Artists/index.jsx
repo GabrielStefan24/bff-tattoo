@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./styles.module.scss";
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useEffect} from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -11,7 +11,7 @@ const Artists = () => {
   const pair2Ref = useRef(null);
   const pair3Ref = useRef(null);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     let ctx = gsap.context(() => {
