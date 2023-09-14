@@ -1,70 +1,48 @@
-"use client";
-
 import styles from "./styles.module.scss";
 import { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap, ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Artists = () => {
-  const container = useRef(null);
   const pair1Ref = useRef(null);
   const pair2Ref = useRef(null);
   const pair3Ref = useRef(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: pair1Ref.current,
+        start: "top bottom",
+        end: "center top",
+        scrub: 0.5
+      }
+    });
 
-    if (pair1Ref.current && pair2Ref.current && pair3Ref.current) {
-      let ctx = gsap.context(() => {
-        gsap.from(pair1Ref.current, {
-          y: "-100%",
-          opacity: 0,
-          scrollTrigger: {
-            trigger: pair1Ref.current,
-            start: "bottom bottom",
-            end: "center top",
-            scrub: 0.5,
-          },
-        });
-        gsap.from(pair2Ref.current, {
-          x: "-100%",
-          y: "150%",
-          scale: 0,
-          opacity: 0,
-          scrollTrigger: {
-            trigger: pair1Ref.current,
-            start: "top bottom",
-            end: "center top",
-            scrub: 0.5,
-          },
-        });
-        gsap.from(pair3Ref.current, {
-          x: "-150%",
-          y: "150%",
-          scale: 0,
-          opacity: 0,
-          scrollTrigger: {
-            trigger: pair1Ref.current,
-            start: "top bottom",
-            end: "center top",
-            scrub: 0.5,
-          },
-        });
+    tl.from(pair1Ref.current, {
+      y: "-100%",
+      opacity: 0,
+    })
+    .from(pair2Ref.current, {
+      x: "-100%",
+      y: "150%",
+      scale: 0,
+      opacity: 0,
+    })
+    .from(pair3Ref.current, {
+      x: "-150%",
+      y: "150%",
+      scale: 0,
+      opacity: 0,
+    });
 
-        ScrollTrigger.refresh();
-
-        return () => {
-          gsap.killTweensOf([pair1Ref.current, pair2Ref.current, pair3Ref.current]);
-          ScrollTrigger.getAll().forEach(st => st.kill());
-          ctx.revert();
-        };
-      });
-    }
+    return () => {
+      // Cleanup if the component is unmounted
+      if (tl) tl.kill();
+    };
   }, []);
 
   return (
     <section className={styles.artists}>
-      <div className={styles.imgContainer} ref={container}>
+      <div className={styles.imgContainer}>
         <div className={styles.imgPair} ref={pair1Ref}>
           <a href="https://www.instagram.com/ed_does" target="_blank" rel="noopener noreferrer">
             <img src="/artist3.jpg" alt="photo of Eduard Stancu" />
@@ -79,7 +57,7 @@ const Artists = () => {
             <img src="/artist3.jpg" alt="photo of Radu" />
           </a>
           <div className={styles.artistBio}>
-            <p>Eduard Stancu</p>
+            <p>Radu</p>
             <p>Black & Grey</p>
           </div>
         </div>
@@ -88,7 +66,7 @@ const Artists = () => {
             <img src="/artist3.jpg" alt="photo of Mihaela" />
           </a>
           <div className={styles.artistBio}>
-            <p>Eduard Stancu</p>
+            <p>Mihaela</p>
             <p>Black & Grey</p>
           </div>
         </div>
