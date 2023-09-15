@@ -28,7 +28,7 @@ const About = () => {
   };
 
   const phrase1 =
-    "We are a team of specialists, crafting designs across a spectrum of styles and complexities. We don’t just ink, we are intentional about drawing with surgical precision, creating exceptional masterpieces on skin.";
+    "We are a team of specialists, crafting designs across a spectrum of styles and complexities. We don’t just ink, we are drawinging with surgical precision, creating exceptional masterpieces on skin.";
 
   const phrase2 =
     "We push the boundaries of tattoo artistry, and then venture even further, just for the thrill of it.";

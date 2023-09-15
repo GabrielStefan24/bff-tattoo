@@ -4,8 +4,19 @@
   
   .container{
     position: relative;
-    height: 150vh;
+    height: 250vh;
+
     
+
+    h2{
+        color: white;
+        color: #ff4d00;
+        line-height: 110%;
+        letter-spacing: 0.2rem;
+        font-size: max(32px, 6.2041666667vw);
+        font-family: Basement;
+        text-align: center;
+    }
   }
   
   .stickyMask{
@@ -17,10 +28,10 @@
     transform: translate3d(0, 0, 0);
     align-items: center;
     justify-content: center;
-    mask-image: url('/next.svg');
-    -webkit-mask-image: url("/next.svg");
-    mask-position: 48.35% center;
-    -webkit-mask-position: 56.5% center;
+    mask-image: url('/test.svg');
+    -webkit-mask-image: url("/test.svg");
+    mask-position: 50% center;
+    -webkit-mask-position: 50% center;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
   

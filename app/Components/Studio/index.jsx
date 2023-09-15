@@ -6,9 +6,9 @@ const Studio = () => {
   const container = useRef(null);
   const stickyMask = useRef(null);
 
-  const initialMaskSize = 1;
+  const initialMaskSize = 0.01;
   const targetMaskSize = 20;
-  const easing = 0.1;
+  const easing = 0.05;
   let easedScrollProgress = 0;
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const Studio = () => {
   }, []);
 
   const animate = () => {
-    const maskSizeProgress = targetMaskSize * getScrollProgress();
+    const maskSizeProgress = (targetMaskSize * getScrollProgress()) / 10;
     stickyMask.current.style.webkitMaskSize =
       (initialMaskSize + maskSizeProgress) * 80 + "%";
     requestAnimationFrame(animate);
@@ -34,6 +34,7 @@ const Studio = () => {
   return (
     <main className={styles.main}>
       <div ref={container} className={styles.container}>
+        <h2>OUR STUDIO</h2>
         <div ref={stickyMask} className={styles.stickyMask}>
           <img src="/studio4.webp" alt="Photo of the studio" />
         </div>
