@@ -20,8 +20,8 @@ const About = () => {
       stagger: 0.02,
       scrollTrigger: {
         trigger: container.current,
-        start: "top",
-        end: `+=${window.innerHeight / 1.2}`,
+        start: "top top",
+        end: `+=${window.innerHeight}`,
         scrub: true,
       },
     });

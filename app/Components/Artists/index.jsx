@@ -14,38 +14,34 @@ const Artists = () => {
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.from(pair1Ref.current, {
-        y: "-100%",
+        x: "-100%",
         opacity: 0,
         scrollTrigger: {
           trigger: pair1Ref.current,
-          start: "bottom bottom",
-          end: "center top",
+          start: "top bottom",
+          end: "top center",
           scrub: 0.5,
         },
       });
       gsap.from(pair2Ref.current, {
         x: "-100%",
-        y: "150%",
-        scale: 0,
         opacity: 0,
 
         scrollTrigger: {
-          trigger: pair1Ref.current,
+          trigger: pair3Ref.current,
           start: "top bottom",
-          end: "center top",
+          end: "top center",
           scrub: 0.5,
         },
       });
       gsap.from(pair3Ref.current, {
         x: "-150%",
-        y: "150%",
-        scale: 0,
         opacity: 0,
 
         scrollTrigger: {
-          trigger: pair1Ref.current,
+          trigger: pair3Ref.current,
           start: "top bottom",
-          end: "center top",
+          end: "top center",
           scrub: 0.5,
         },
       });
@@ -60,7 +56,7 @@ const Artists = () => {
     <section className={styles.artists}>
       <div className={styles.imgContainer} ref={container}>
         <div className={styles.imgPair} ref={pair1Ref}>
-          <a href="https://www.instagram.com/ed_does" target="_blanc">
+          <a href="https://www.instagram.com/ed_does" target="_blank">
             <img src="/artist3.jpg" alt="photo of Eduard Stancu" />
           </a>
           <div className={styles.artistBio}>
@@ -69,7 +65,7 @@ const Artists = () => {
           </div>
         </div>
         <div className={styles.imgPair} ref={pair2Ref}>
-          <a href="https://www.instagram.com/sevilens_craft" target="_blanc">
+          <a href="https://www.instagram.com/sevilens_craft" target="_blank">
             <img src="/artist3.jpg" alt="photo of Mihaela" />
           </a>
           <div className={styles.artistBio}>
@@ -78,7 +74,7 @@ const Artists = () => {
           </div>
         </div>
         <div className={styles.imgPair} ref={pair3Ref}>
-          <a href="https://www.instagram.com/russetattoo" target="_blanc">
+          <a href="https://www.instagram.com/russetattoo" target="_blank">
             <img src="/artist3.jpg" alt="photo of Radu" />
           </a>
           <div className={styles.artistBio}>
