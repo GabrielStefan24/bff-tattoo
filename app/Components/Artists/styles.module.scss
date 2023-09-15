@@ -5,6 +5,9 @@
     @media(min-width:769px) and (max-width:890px) {
         height: 50vh;
     }
+    @media(max-width:768px){
+        height: 100vh;
+    }
     
 
     .imgContainer{
@@ -12,12 +15,11 @@
         height: clamp(20vw,30vw,40vw);
         display: flex;
         gap: 2%;
-        flex-wrap: wrap;
+        align-items: center;
         justify-content: center;
         @media(max-width:768px){
             flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: flex-start;
+            
             align-items: center;
             gap: 2rem;
             height: 100vh;

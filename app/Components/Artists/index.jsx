@@ -69,8 +69,8 @@ const Artists = () => {
           </div>
         </div>
         <div className={styles.imgPair} ref={pair2Ref}>
-          <a href="https://www.instagram.com/russetattoo" target="_blanc">
-            <img src="/artist3.jpg" alt="photo of Radu" />
+          <a href="https://www.instagram.com/sevilens_craft" target="_blanc">
+            <img src="/artist3.jpg" alt="photo of Mihaela" />
           </a>
           <div className={styles.artistBio}>
             <p>Eduard Stancu</p>
@@ -78,8 +78,8 @@ const Artists = () => {
           </div>
         </div>
         <div className={styles.imgPair} ref={pair3Ref}>
-          <a href="https://www.instagram.com/sevilens_craft" target="_blanc">
-            <img src="/artist3.jpg" alt="photo of Mihaela" />
+          <a href="https://www.instagram.com/russetattoo" target="_blanc">
+            <img src="/artist3.jpg" alt="photo of Radu" />
           </a>
           <div className={styles.artistBio}>
             <p>Eduard Stancu</p>
