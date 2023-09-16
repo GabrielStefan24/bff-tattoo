@@ -11,6 +11,7 @@ import Preloader from "./Components/Preloader";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
+  const [lenis, setLenis] = useState(null);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -22,6 +23,7 @@ export default function Home() {
       },
     });
 
+    setLenis(lenis);
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -44,7 +46,7 @@ export default function Home() {
         <Preloader setLoading={setLoading} />
       ) : (
         <>
-          <Navbar />
+          <Navbar lenisInstance={lenis} />
           <Hero />
           <About />
           <Artists />

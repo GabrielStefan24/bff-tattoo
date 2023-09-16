@@ -1,15 +1,13 @@
 import styles from "./styles.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 
-const Navbar = () => {
+const Navbar = ({ lenisInstance }) => {
+  const headerRef = useRef(null);
+
   const [isPhone, setIsPhone] = useState(false);
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,9 +26,21 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   return (
-    <header className={styles.header}>
-      <p>BLACK FLAG.</p>
+    <header className={styles.header} ref={headerRef}>
+      <p
+        onClick={() => {
+          if (lenisInstance) {
+            lenisInstance.scrollTo(0, {
+              lerp: 0.05,
+              duration: 1,
+            });
+          }
+        }}
+      >
+        BLACK FLAG.
+      </p>
       {!isPhone && (
         <div className={styles.logo}>
           <span>CIRCA</span>
@@ -86,41 +96,7 @@ const Navbar = () => {
         </div>
       )}
 
-      <div className={styles.menu}>
-        <button className={styles.headerButton} onClick={toggleMenu}>
-          <div className={styles.menuContainer}>
-            <p>
-              <span className={styles.menuText}>MENU</span>
-              <span className={styles.closeText}>CLOSE</span>
-            </p>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28">
-            <path
-              d="M1 8 C6 8 11 8 16 8 16 8.66 16 9.33 16 10 11 10 6 10 1 10 1 9.33 1 8.66 1 8"
-              fill="currentColor"
-              dataoriginal="M1 8h15v2H1z"
-              style={{ transformOrigin: "0px 0px" }}
-              transform="matrix(1,0,0,1,0,0)"
-            ></path>
-            <line
-              x1="1"
-              y1="15"
-              x2="25"
-              y2="15"
-              stroke="currentColor"
-              strokeWidth="2"
-              style={{ transformOrigin: "0px 0px" }}
-              transform="matrix(1,0,0,1,0,0)"
-            ></line>
-            <path
-              d="M1 20h24v2H1z"
-              fill="currentColor"
-              style={{ transformOrigin: "0px 0px" }}
-              transform="matrix(1,0,0,1,0,0)"
-            ></path>
-          </svg>
-        </button>
-      </div>
+      <div className={styles.menu}></div>
     </header>
   );
 };

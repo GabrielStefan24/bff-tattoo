@@ -13,6 +13,7 @@ const Preloader = ({ setLoading }) => {
   const goToHome = () => {
     sessionStorage.setItem("loadingShown", "true");
     setLoading(false);
+    window.scrollTo(0, 0);
   };
   useEffect(() => {
     setTimeout(() => {
@@ -30,7 +31,6 @@ const Preloader = ({ setLoading }) => {
             initial="initial"
             animate="enter"
             className={styles.tiles}
-            exit="exit"
           >
             <div className={styles.tile}>
               {firstRow.map((img, index) => (
@@ -84,7 +84,7 @@ const Preloader = ({ setLoading }) => {
               Black Flag
             </motion.h1>
             <motion.h1
-              key="h1"
+              key="h2"
               variants={slideUp}
               initial="initial"
               animate="enter"

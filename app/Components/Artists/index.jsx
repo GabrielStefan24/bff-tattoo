@@ -10,8 +10,9 @@ const Artists = () => {
   const pair1Ref = useRef(null);
   const pair2Ref = useRef(null);
   const pair3Ref = useRef(null);
-  gsap.registerPlugin(ScrollTrigger);
+ 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     let ctx = gsap.context(() => {
       gsap.from(pair1Ref.current, {
         x: "-100%",
