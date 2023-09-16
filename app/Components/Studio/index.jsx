@@ -1,19 +1,33 @@
 "use client";
-import { useRef, useEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 import styles from "./styles.module.scss";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 
 const Studio = () => {
-  const container = useRef(null);
+  const studioContainer = useRef(null);
   const stickyMask = useRef(null);
-  
-  
+  const textRef = useRef(null);
+
   const initialMaskSize = 0.2;
   const targetMaskSize = 20;
   const easing = 0.05;
   let easedScrollProgress = 0;
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     requestAnimationFrame(animate);
+    gsap.to(textRef.current, {
+      opacity: 1,
+      ease: "power3.out",
+      duration: 2,
+      scrollTrigger: {
+        trigger: studioContainer.current,
+        start: "top center  ",
+        end: "bottom center",
+        scrub: 0.5,
+      },
+    });
   }, []);
 
   const animate = () => {
@@ -26,21 +40,22 @@ const Studio = () => {
   const getScrollProgress = () => {
     const scrollProgress =
       stickyMask.current.offsetTop /
-      (container.current.getBoundingClientRect().height - window.innerHeight);
+      (studioContainer.current.getBoundingClientRect().height -
+        window.innerHeight);
     const delta = scrollProgress - easedScrollProgress;
     easedScrollProgress += delta * easing;
     return easedScrollProgress;
   };
 
   return (
-    <main className={styles.main}>
-      <div ref={container} className={styles.container}>
-        <h2>OUR STUDIO</h2>
+    <section className={styles.main}>
+      <div ref={studioContainer} className={styles.container}>
+        <h2 ref={textRef}>OUR STUDIO</h2>
         <div ref={stickyMask} className={styles.stickyMask}>
           <img src="/studio4.webp" alt="Photo of the studio" />
         </div>
       </div>
-    </main>
+    </section>
   );
 };
 

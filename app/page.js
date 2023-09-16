@@ -1,20 +1,20 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
-import { useRouter } from "next/navigation";
 import About from "./Components/About";
 import Artists from "./Components/Artists";
 import Studio from "./Components/Studio";
 import Gallery from "./Components/Gallery";
 import Lenis from "@studio-freight/lenis";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import Preloader from "./Components/Preloader";
+import { useState } from "react";
 
 export default function Home() {
-  const router = useRouter();
-  const [hideContent, setHideContent] = useState(true);
-  
+  const [loading, setLoading] = useState(
+    sessionStorage.getItem("loadingShown") !== "true"
+  );
+
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.05,
@@ -32,29 +32,29 @@ export default function Home() {
 
     requestAnimationFrame(raf);
 
-    const preloaderShown = sessionStorage.getItem("loadingShown");
+    const hasLoadingBeenShown = sessionStorage.getItem("loadingShown");
 
-    if (!preloaderShown) {
-      router.push("/preloader");
+    if (hasLoadingBeenShown === "true") {
+      setLoading(false);
     }
-
-    setTimeout(() => {
-      setHideContent(false);
-    }, 700);
-
-  
-   
   }, []);
-  
+
   return (
     <>
-      <main style={{ display: hideContent ? "none" : "" }}>
-        <Navbar />
-        <Hero />
-        <About />
-        <Artists />
-        <Studio />
-        <Gallery />
+      <main>
+        {loading ? (
+          <Preloader setLoading={setLoading} />
+        ) : (
+          <>
+            {" "}
+            <Navbar />
+            <Hero />
+            <About />
+            <Artists />
+            <Studio />
+            <Gallery />
+          </>
+        )}
       </main>
     </>
   );

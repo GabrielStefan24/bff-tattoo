@@ -17,9 +17,9 @@ const Navbar = () => {
       },
       {
         y: "0%",
-        duration: 2.5,
+        duration: 1.5,
         ease: "power4.out",
-        delay: 0.2,
+        delay: 0.8,
       }
     );
 

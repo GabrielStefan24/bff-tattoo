@@ -20,9 +20,9 @@ const About = () => {
       stagger: 0.02,
       scrollTrigger: {
         trigger: container.current,
-        start: "top top",
-        end: `+=${window.innerHeight}`,
-        scrub: true,
+        start: "top bottom",
+        end: " top  center",
+        scrub: 0.5,
       },
     });
   };

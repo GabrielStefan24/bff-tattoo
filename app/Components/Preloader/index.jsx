@@ -3,20 +3,15 @@
 import styles from "./styles.module.scss";
 import { motion } from "framer-motion";
 import { rotate, slideUp } from "./variants";
-import { firstRow, secondRow, thirdRow } from "../Data/imageData";
-import { useRouter } from "next/navigation";
-import Button from "./(button)/Button";
+import { firstRow, secondRow, thirdRow } from "../../Data/imageData";
+import Button from "./(button)/index";
+import { useEffect } from "react";
 
-const Preloader = () => {
- 
-
-  const router = useRouter();
-
+const Preloader = ({ setLoading }) => {
   const goToHome = () => {
     sessionStorage.setItem("loadingShown", "true");
-    router.push("/");
+    setLoading(false);
   };
-
 
   return (
     <>
@@ -101,8 +96,6 @@ const Preloader = () => {
             <Button />
           </motion.div>
         </div>
-
-       
       </>
       )
     </>
