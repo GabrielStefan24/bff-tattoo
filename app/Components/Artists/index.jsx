@@ -36,7 +36,7 @@ const Artists = () => {
         },
       });
       gsap.from(pair3Ref.current, {
-        x: "-150%",
+        x: "-100%",
         opacity: 0,
 
         scrollTrigger: {
