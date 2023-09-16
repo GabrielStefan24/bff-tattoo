@@ -4,6 +4,7 @@
     overflow: hidden;
     position: relative;
         a{  
+            text-align: center;
             text-decoration: none;
             position: absolute;
             top: 50%;
@@ -15,6 +16,7 @@
             letter-spacing: 0.2rem;
             color: white;
             font-size: clamp(1rem,8vw,9rem);
+            width: 100%;
         }
         .plane{
             width: 100%;

@@ -15,14 +15,15 @@ const About = () => {
   const createAnimations = () => {
     gsap.to(refs.current, {
       opacity: 1,
-      ease: "power2.out",
-      transform: "translateY(0px) rotate(0deg)",
+      ease: "power3.out",
+
       stagger: 0.02,
       scrollTrigger: {
         trigger: container.current,
         start: "top bottom",
-        end: " top  center",
+        end: " top center",
         scrub: 0.5,
+        markers: true,
       },
     });
   };
