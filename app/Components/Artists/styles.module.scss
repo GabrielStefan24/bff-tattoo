@@ -58,7 +58,7 @@
             }
         
             img {
-                height: clamp(25rem,50rem,50rem);
+                height: clamp(25rem,35rem,50rem);
                 width: auto;
                 border-radius: 1%;
                 opacity: 1;
@@ -71,6 +71,9 @@
                     margin-bottom: 0.5rem;
                     
                   }
+                @media(min-width:2500px){
+                    height: 50rem;
+                }
             }
             .artistBio{
                 position: absolute;
