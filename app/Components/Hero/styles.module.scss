@@ -2,6 +2,13 @@
     position: relative;
     height: 100vh;
     width: 100%;
+    margin-top: max(59px,15.7333333333vw);
+    @media(min-width:768px){
+        margin-top: max(64px,10.3225806452vw);
+    }
+    @media(min-width:1024px){
+        margin-top: 4.1666666667vw
+    }
     img {
         filter: brightness(50%);
         max-height: calc(100vh - 16.1666666667vw);
@@ -19,7 +26,7 @@
         @media(max-width :281px) {
             min-height: calc(100vh - 80.1666666667vw);
         } 
-     
+    
     }
     .cover {
         position: absolute;
@@ -35,30 +42,37 @@
         display: inline-flex;
         overflow: hidden;
     }
+
     h1{
-        font-size: clamp(4rem,8vw,10rem);
-        color: white;
-        z-index: 10;
-    }
-    h2{
+        opacity: 0;
         padding: 1rem;
         z-index: 10;
         position: absolute;
-        bottom: 1.8vw;
+        bottom: 2.8vw;
+        width: 100%;
         text-transform: uppercase;
         font-family: Basement;
         color: #ff4d00;
-        font-size: max(32px,6.2041666667vw);
+        font-size: max(32px,5.24041666667vw);
         line-height: 110%;
         letter-spacing: 0.2rem;
         @media(max-width : 1023px) and (min-width : 768px){
-            font-size: 4rem;
+            font-size: 3.4rem;
+            bottom: 10.8vw;
         }
         @media(max-width : 1023px) and (min-height : 1368px){
             font-size: 4.5rem;
         }
+        @media(max-width : 913px) and (min-width : 900px){
+            font-size: 3.5rem;
+        }
         @media(max-width : 540px) and (min-height : 720px){
-            font-size: 2rem;
+            font-size: 2.8rem;
+            bottom: 12vw;
+        }
+        @media(max-width : 420px) and (min-width : 410px){
+            font-size: 1.8rem;
+            bottom: 12vw;
         }
     }
 }

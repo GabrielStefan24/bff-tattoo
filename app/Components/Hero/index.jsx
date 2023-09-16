@@ -7,7 +7,7 @@ import { gsap } from "gsap";
 const Hero = () => {
   const imageRef = useRef(null);
   const coverRef = useRef(null);
-
+  const text = useRef(null);
 
   useLayoutEffect(() => {
     gsap.to(coverRef.current, {
@@ -16,12 +16,18 @@ const Hero = () => {
       ease: "expo.inOut",
       delay: 0.2,
     });
+    gsap.to(text.current, {
+      opacity: 1,
+      duration: 1.2,
+      ease: "expot.inOut",
+      delay: 1.4,
+    });
   }, []);
   return (
     <section className={styles.hero}>
       <div className={styles.cover} ref={coverRef}></div>
       <img src="/hero.jpg" alt="Hero image" ref={imageRef} />
-      <h2>we make cool art that lasts forever.</h2>
+      <h1 ref={text}>we make cool art that lasts forever.</h1>
     </section>
   );
 };

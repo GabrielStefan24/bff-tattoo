@@ -19,13 +19,14 @@ const Studio = () => {
     requestAnimationFrame(animate);
     gsap.to(textRef.current, {
       opacity: 1,
-      ease: "power3.out",
-      duration: 2,
+      ease: "power4.out",
+      duration: 3,
+
       scrollTrigger: {
         trigger: studioContainer.current,
         start: "top center  ",
         end: "bottom center",
-        scrub: 0.5,
+        scrub: 0.1,
       },
     });
   }, []);

@@ -23,7 +23,6 @@ const About = () => {
         start: "top bottom",
         end: " top center",
         scrub: 0.5,
-        markers: true,
       },
     });
   };

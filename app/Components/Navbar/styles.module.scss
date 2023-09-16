@@ -1,64 +1,118 @@
-.navbar{
+.header{
+    height: max(59px,15.7333333333vw);
+    padding: 0 max(16px,4.2666666667vw);
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
-    color: white;
+    z-index: 99;
     display: flex;
     justify-content: space-between;
-    height: 10vh;    
-    width: 100%;
-    padding: 5vh 4vh;
-    z-index: 999;
-    
+    align-items: center;
+    border-bottom: 1px solid white;
+     backdrop-filter:blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    p{
+        color: white;
+        font-size: clamp(1rem,1vw,2vw);
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    p:nth-child(1){
+        font-family: Basement;
+        cursor: pointer;
+    }
+    @media(min-width:768px) {
+        height: max(64px,10.3225806452vw);
+    }
+    @media(min-width:1024px){
+        height: 4.1666666667vw;
+        padding: 0 1.5625vw;
+    }
+
     .logo{
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 5;
-        p{
-            font-weight: 400;
-            font-size: clamp(1.5rem,2.5vw,3rem);
+        color: white;
+        span{
             text-transform: uppercase;
+            font-weight: bolder;
+            @media(min-width:1024px){
+                font-size: .8333333333vw;
+            }
         }
+       
+      
+        svg{
+            @media(min-width: 1024px){
+                width: 4.8vw;
+                height: 2.6vw;
+            }
+          
+        }
+
+    }
+   .menu{
+    &:hover{
+        scale: 1.1;
+        transition: all 0.3s ease-in-out;
     }
   
-    p, a, span{
-        position: relative;
+    .headerButton{
+        display: flex;
         cursor: pointer;
-        font-size: clamp(1rem,1.5vw,1.5rem);
-        font-weight: 300;
-        
+        align-items: center;
+        background-color: initial;
+        background-image: none;
+        border: 0px;
+        position: relative;
 
-        &::before {
-            content: "";
-            position: absolute;
-            height: 1px;
-            width: 100%;
-            background: white;
-            top: 92%;
-            transition: transform 0.3s;
-            transform-origin: 50% 50%;
-            transform: scaleX(0);
-            margin-top: 0.5vh;
-          }
-          
-          &:hover::before {
-            transform: scaleX(1);
-            
-          }
-        
-    }
-    
-
-    .anchors{
+      
+      .menuContainer{
+        overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 3vw;
         
-        a{
-            color: white;
-            text-decoration: none;
+        p{
+            font-size: clamp(1rem,0.9vw,1.5vw);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 400;
+            margin-top: 0.2rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            letter-spacing: -0.05em;
+
+            .closeText{
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: inline-block;
+                transform: translateY(200%);
+            }
         }
+      } 
+      
+      
+        
+     svg{
+        margin-left: 0.8em;
+        color: white;
+        width: max(29px,7.7333333333vw);
+        height: max(29px,7.7333333333vw);
+        @media(min-width:768px){
+            width: max(32px,2.2222222222vw);
+            height: max(32px,2.2222222222vw);
+        }
+        @media(min-width:1024px){
+            width: max(28px,1.9444444444vw);
+            height: max(28px,1.9444444444vw);
+
+        }
+     }
+        
     }
+   }
 }

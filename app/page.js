@@ -1,5 +1,5 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import About from "./Components/About";
@@ -8,12 +8,9 @@ import Studio from "./Components/Studio";
 import Gallery from "./Components/Gallery";
 import Lenis from "@studio-freight/lenis";
 import Preloader from "./Components/Preloader";
-import { useState } from "react";
 
 export default function Home() {
-  const [loading, setLoading] = useState(
-    sessionStorage.getItem("loadingShown") !== "true"
-  );
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -36,27 +33,25 @@ export default function Home() {
 
     if (hasLoadingBeenShown === "true") {
       setLoading(false);
+    } else {
+      sessionStorage.setItem("loadingShown", "true");
     }
   }, []);
 
   return (
-    <>
-      <main>
-        {loading ? (
-          <Preloader setLoading={setLoading} />
-        ) : (
-          <>
-            {" "}
-            <Navbar />
-            <Hero />
-            <About />
-            <Artists />
-            <Studio />
-            <Gallery />
-          </>
-        )}
-      </main>
-    </>
+    <main>
+      {loading ? (
+        <Preloader setLoading={setLoading} />
+      ) : (
+        <>
+          <Navbar />
+          <Hero />
+          <About />
+          <Artists />
+          <Studio />
+          <Gallery />
+        </>
+      )}
+    </main>
   );
 }
-
