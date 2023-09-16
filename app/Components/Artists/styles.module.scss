@@ -58,7 +58,7 @@
             }
         
             img {
-                height: clamp(25rem,35rem,50rem);
+                height: clamp(20rem,35rem,50rem);
                 width: auto;
                 border-radius: 1%;
                 opacity: 1;
@@ -67,7 +67,6 @@
                 display: block; 
                 @media(max-width:912px){
                     height: 20rem;
-                  
                     margin-bottom: 0.5rem;
                     
                   }
