@@ -62,20 +62,41 @@ const Gallery = () => {
       }}
     >
       <div ref={plane1} className={styles.plane}>
-        <img src={`${firstRow[5].src}`} alt="photo" />
-        <img src={`${firstRow[6].src}`} alt="photo" />
-        <img src={`${secondRow[0].src}`} alt="photo" />
+        <a href="#">
+          <img src={`${firstRow[5].src}`} alt="photo" />
+        </a>
+        <a href="#">
+          <img src={`${firstRow[6].src}`} alt="photo" />
+        </a>
+        <a href="#">
+          <img src={`${secondRow[0].src}`} alt="photo" />
+        </a>
       </div>
       <div className={styles.plane} ref={plane2}>
-        <img src={`${secondRow[2].src}`} alt="photo" />
-        <img src={`${secondRow[6].src}`} alt="photo" />
-        <img src={`${secondRow[9].src}`} alt="photo" />
+        <a href="#">
+          <img src={`${secondRow[2].src}`} alt="photo" />
+        </a>
+        <a href="#">
+          <img src={`${secondRow[6].src}`} alt="photo" />
+        </a>
+        <a href="#">
+          <img src={`${secondRow[9].src}`} alt="photo" />
+        </a>
       </div>
       <div className={styles.plane} ref={plane3}>
-        <img src={`${thirdRow[1].src}`} alt="photo" />
-        <img src={`${thirdRow[3].src}`} alt="photo" />
+        <a href="#">
+          <img src={`${thirdRow[1].src}`} alt="photo" />
+        </a>
+        <a href="#">
+          <img src={`${thirdRow[3].src}`} alt="photo" />
+        </a>
       </div>
-      <a href="https://www.instagram.com/bf.ttt/" target="_blanc">
+
+      <a
+        className={styles.text}
+        href="https://www.instagram.com/bf.ttt/"
+        target="_blanc"
+      >
         follow us
       </a>
     </section>

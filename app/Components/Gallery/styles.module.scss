@@ -3,7 +3,7 @@
     width: 100vw;
     overflow: hidden;
     position: relative;
-        a{  
+        .text{  
             text-align: center;
             text-decoration: none;
             position: absolute;
@@ -20,23 +20,33 @@
            
         }
         .plane{
+            pointer-events: none;
             width: 100%;
             height: 100%;
             position: absolute;
             
+            
            
-
-            img{
+            a{
+               
+                display: block;
                 position: absolute;
+                pointer-events: auto;
+                
+            }
+            img{
+                
                 width: clamp(130px,14vw,20vw);
                 border-radius: 5%;
+                
                 
             }
 
             &:nth-of-type(1) {
                 filter: brightness(0.8);
                 
-                img{
+                a{
+                    
                     &:nth-of-type(1){
                         left: 75%;
                         top: 50%;
@@ -65,7 +75,7 @@
             }
             &:nth-of-type(2){
                 filter: brightness(0.7);
-                img{
+                a{
                     &:nth-of-type(1){
                         left: 25%;
                         top: 0;
@@ -90,7 +100,7 @@
               }
               &:nth-of-type(3){
                 filter: brightness(0.9);
-                img{
+                a{
                     &:nth-of-type(1){
                         left: 10%;
                         top: 0%;
