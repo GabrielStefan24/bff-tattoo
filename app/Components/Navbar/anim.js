@@ -13,17 +13,14 @@ export const opacity = {
 
 export const slideUp = {
   initial: {
-    
-    y: "100%",
+    y: "200%",
   },
   open: {
-    
-    y: "-100%",
-    transition: { duration: 1.2, delay: 0.7, ease: [0.22, 1, 0.36, 1] },
+    y: "-20%",
+    transition: { duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] },
   },
   closed: {
-    
-    y: "100%",
+    y: "200%",
   },
 };
 
@@ -33,7 +30,7 @@ export const linkVariants = {
   },
   open: (i) => ({
     x: "0",
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 1 + 0.1 * i },
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.5 + 0.1 * i },
   }),
   exit: {
     x: "-120%",
