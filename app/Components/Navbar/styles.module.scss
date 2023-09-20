@@ -126,7 +126,7 @@
        font-size: clamp(0.8rem,1vw,1.6rem);
        font-family: Arial, Helvetica, sans-serif;
        pointer-events: none;
-       opacity: 0;
+       display:none;
        margin-bottom:6rem;
         @media(min-width:768px){
             padding: 2rem;
@@ -144,6 +144,10 @@
         color: white;
        }
     }
+    .display{
+     display:block;
+    }
+
     .events{
         pointer-events: auto;
     }
