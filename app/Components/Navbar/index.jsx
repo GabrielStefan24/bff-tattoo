@@ -1,19 +1,18 @@
 "use client";
 
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import styles from "./styles.module.scss";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { opacity, slideUp, linkVariants } from "./anim";
 import Link from "next/link";
 
-const Navbar = ({ lenisInstance }) => {
+const Navbar = () => {
   const [isPhone, setIsPhone] = useState(false);
   const [initialHeight, setInitialHeight] = useState(null);
   const [isActive, setIsActive] = useState(false);
   const currentPath = usePathname();
   const headerRef = useRef(null);
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,9 +34,8 @@ const Navbar = ({ lenisInstance }) => {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      lenisInstance && lenisInstance.start();
     };
-  }, [isActive]);
+  }, []);
 
   const isActiveLink = (href) => currentPath === href;
 
@@ -194,15 +192,13 @@ const Navbar = ({ lenisInstance }) => {
               >
                 <p
                   onClick={() => {
-                    if (lenisInstance) {
-                      lenisInstance.scrollTo(10000, {
-                        lerp: 0.05,
-                        duration: 1,
-                      });
-                      setTimeout(() => {
-                        setIsActive(false);
-                      }, 2000);
-                    }
+                    window.scroll({
+                      top: document.documentElement.scrollHeight,
+                      behavior: "smooth",
+                    });
+                    setTimeout(() => {
+                      setIsActive(false);
+                    }, 800);
                   }}
                 >
                   CONTACT
