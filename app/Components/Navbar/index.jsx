@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname } from 'next/navigation';
 import styles from "./styles.module.scss";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,17 +16,17 @@ const Navbar = ({ lenisInstance }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setIsPhone(true);
-      } else {
-        setIsPhone(false);
-      }
+        if (window.innerWidth < 768) {
+            setIsPhone(true);
+        } else {
+            setIsPhone(false);
+        }
     };
 
     if (isActive) {
-      lenisInstance && lenisInstance.stop(); // Stop Locomotive Scroll
+        lenisInstance && lenisInstance.stop();  
     } else {
-      lenisInstance && lenisInstance.start(); // Start Locomotive Scroll
+        lenisInstance && lenisInstance.start(); 
     }
 
     handleResize();
@@ -34,30 +34,31 @@ const Navbar = ({ lenisInstance }) => {
     window.addEventListener("resize", handleResize);
 
     if (headerRef.current) {
-      const height = getComputedStyle(headerRef.current).height;
-      setInitialHeight(height);
+        const height = getComputedStyle(headerRef.current).height;
+        setInitialHeight(height);
     }
 
     return () => {
-      window.removeEventListener("resize", handleResize);
-      lenisInstance && lenisInstance.start(); // Ensure scrolling is enabled when the component is unmounted
+        window.removeEventListener("resize", handleResize);
+        lenisInstance && lenisInstance.start(); 
     };
-  }, [isActive]);
+}, [isActive]);
+
 
   const isActiveLink = (href) => currentPath === href;
 
-  const test = {
-    open: { height: "100vh" },
+  const slideDown = {
+    open: { height: "101vh" },
     closed: { height: initialHeight },
   };
 
   return (
     <motion.header
-      variants={test}
+      variants={slideDown}
       animate={isActive ? "open" : "closed"}
       className={styles.header}
     >
-      <div className={styles.menuContent}>
+     <div className={styles.menuContent}>
         <p
           onClick={() => {
             if (lenisInstance) {
@@ -161,7 +162,7 @@ const Navbar = ({ lenisInstance }) => {
           <a href="mailto:">blablablabla@gmail.com</a>
         </div>
       </motion.div>
-
+      
       <div className={styles.links}>
         <AnimatePresence>
           {isActive && (
@@ -174,10 +175,7 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={0}
               >
-                <Link
-                  href="/"
-                  className={isActiveLink("/") ? styles.activeLink : ""}
-                >
+                <Link href="/" className={isActiveLink('/') ? styles.activeLink : ''}>
                   HOME
                 </Link>
               </motion.div>
@@ -190,11 +188,8 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={1}
               >
-                <Link
-                  href="/gallery"
-                  className={isActiveLink("/gallery") ? styles.activeLink : ""}
-                >
-                  GALLERY
+                <Link href="/gallery"  className={isActiveLink('/gallery') ? styles.activeLink : ''}>
+                GALLERY
                 </Link>
               </motion.div>
 
@@ -206,11 +201,8 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={2}
               >
-                <Link
-                  href="/contact"
-                  className={isActiveLink("/contact") ? styles.activeLink : ""}
-                >
-                  CONTACT
+                <Link href="/contact"   className={isActiveLink('/contact') ? styles.activeLink : ''}>
+                CONTACT
                 </Link>
               </motion.div>
 
@@ -222,11 +214,8 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={3}
               >
-                <Link
-                  href="/faq"
-                  className={isActiveLink("/faq") ? styles.activeLink : ""}
-                >
-                  FAQ
+                <Link href="/faq"   className={isActiveLink('/faq') ? styles.activeLink : ''}>
+                FAQ
                 </Link>
               </motion.div>
             </>
