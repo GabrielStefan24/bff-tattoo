@@ -149,7 +149,7 @@ const Navbar = ({ lenisInstance }) => {
         variants={slideUp}
         initial="initial"
         animate={isActive ? "open" : "closed"}
-        className={styles.menuFooter}
+        className={`${styles.menuFooter} ${isActive ? styles.display : ""}}
       >
         <div className={`${styles.socials} ${isActive ? styles.events : ""}`}>
           <p>SOCIAL MEDIA</p>
