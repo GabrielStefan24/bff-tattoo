@@ -16,26 +16,34 @@ const Navbar = ({ lenisInstance }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setIsPhone(true);
-      } else {
-        setIsPhone(false);
-      }
+        if (window.innerWidth < 768) {
+            setIsPhone(true);
+        } else {
+            setIsPhone(false);
+        }
     };
+
+    if (isActive) {
+        lenisInstance && lenisInstance.stop();  // Stop Locomotive Scroll
+    } else {
+        lenisInstance && lenisInstance.start(); // Start Locomotive Scroll
+    }
 
     handleResize();
 
     window.addEventListener("resize", handleResize);
 
     if (headerRef.current) {
-      const height = getComputedStyle(headerRef.current).height;
-      setInitialHeight(height);
+        const height = getComputedStyle(headerRef.current).height;
+        setInitialHeight(height);
     }
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+        window.removeEventListener("resize", handleResize);
+        lenisInstance && lenisInstance.start(); // Ensure scrolling is enabled when the component is unmounted
     };
-  }, []);
+}, [isActive]);
+
 
   const isActiveLink = (href) => currentPath === href;
 
