@@ -13,17 +13,17 @@ export const opacity = {
 
 export const slideUp = {
   initial: {
-    opacity: 0,
-    y: "0",
+    
+    y: "50%",
   },
   open: {
-    opacity: 1,
+    
     y: "-20%",
     transition: { duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] },
   },
   closed: {
-    opacity: 0,
-    y: "0%",
+    
+    y: "50%",
   },
 };
 
