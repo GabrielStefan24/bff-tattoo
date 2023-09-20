@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 import gsap from "gsap";
 import { useRef } from "react";
 
-const page = () => {
+const Artists = () => {
   const textRef = useRef(null);
   const container = useRef(null);
   const pair1Ref = useRef(null);
@@ -47,4 +47,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Artists;
