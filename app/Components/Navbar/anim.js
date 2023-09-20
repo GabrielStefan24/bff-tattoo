@@ -19,7 +19,7 @@ export const slideUp = {
   open: {
     
     y: "-100%",
-    transition: { duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 1.2, delay: 0.7, ease: [0.22, 1, 0.36, 1] },
   },
   closed: {
     
