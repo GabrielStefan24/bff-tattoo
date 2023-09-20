@@ -24,9 +24,9 @@ const Navbar = ({ lenisInstance }) => {
     };
 
     if (isActive) {
-        lenisInstance && lenisInstance.stop();  // Stop Locomotive Scroll
+        lenisInstance && lenisInstance.stop();  
     } else {
-        lenisInstance && lenisInstance.start(); // Start Locomotive Scroll
+        lenisInstance && lenisInstance.start(); 
     }
 
     handleResize();
@@ -40,21 +40,21 @@ const Navbar = ({ lenisInstance }) => {
 
     return () => {
         window.removeEventListener("resize", handleResize);
-        lenisInstance && lenisInstance.start(); // Ensure scrolling is enabled when the component is unmounted
+        lenisInstance && lenisInstance.start(); 
     };
 }, [isActive]);
 
 
   const isActiveLink = (href) => currentPath === href;
 
-  const test = {
-    open: { height: "100vh" },
+  const slideDown = {
+    open: { height: "101vh" },
     closed: { height: initialHeight },
   };
 
   return (
     <motion.header
-      variants={test}
+      variants={slideDown}
       animate={isActive ? "open" : "closed"}
       className={styles.header}
     >
@@ -175,8 +175,8 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={0}
               >
-                <Link href="/">
-                  <a className={isActiveLink('/') ? styles.activeLink : ''}>HOME</a>
+                <Link href="/" className={isActiveLink('/') ? styles.activeLink : ''}>
+                  HOME
                 </Link>
               </motion.div>
 
@@ -188,8 +188,8 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={1}
               >
-                <Link href="/gallery">
-                  <a className={isActiveLink('/gallery') ? styles.activeLink : ''}>GALLERY</a>
+                <Link href="/gallery"  className={isActiveLink('/gallery') ? styles.activeLink : ''}>
+                GALLERY
                 </Link>
               </motion.div>
 
@@ -201,8 +201,8 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={2}
               >
-                <Link href="/contact">
-                  <a className={isActiveLink('/contact') ? styles.activeLink : ''}>CONTACT</a>
+                <Link href="/contact"   className={isActiveLink('/contact') ? styles.activeLink : ''}>
+                CONTACT
                 </Link>
               </motion.div>
 
@@ -214,8 +214,8 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={3}
               >
-                <Link href="/faq">
-                  <a className={isActiveLink('/faq') ? styles.activeLink : ''}>FAQ</a>
+                <Link href="/faq"   className={isActiveLink('/faq') ? styles.activeLink : ''}>
+                FAQ
                 </Link>
               </motion.div>
             </>
