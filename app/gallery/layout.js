@@ -6,12 +6,12 @@ export const metadata = {
   description: "Artists of Black Flag Tattoo Studio",
 };
 
-export default function RootLayout({ children }) {
+export default function DashboardLayout({ children }) {
   return (
-    <html lang="en">
+    <section>
       <Navbar />
-      <body>{children}</body>
+      {children}
       <Contact />
-    </html>
+    </section>
   );
 }

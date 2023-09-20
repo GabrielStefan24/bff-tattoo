@@ -3,9 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-   
-   
-    width: 100%;
+    
     margin-top: max(59px,15.7333333333vw);
     @media(min-width:768px){
         margin-top: max(64px,10.3225806452vw);
@@ -68,27 +66,34 @@
             }
         
             img {
-                height: 22rem;
+                height: 24rem;
                 width: auto;
                 border-radius: 2%;
                 opacity: 1;
                 filter: grayscale(100%) brightness(0.6);
-               
-                display: block; 
-                @media(max-width:912px){
+                @media(min-width:768px){
                     height: 18rem;
-                    margin-bottom: 0.5rem;
-                    
-                  }
-                  @media(min-width:1440px){
+                }
+                @media(min-width:912px){
+                    height: 21rem;
+                }
+                @media(min-width:1200px){
                     height: 30rem;
                 }
-                @media(min-width:1900px){
+                @media(min-width:1600px){
+                    height: 35rem;
+                }
+                @media(min-width:2000px){
                     height: 40rem;
                 }
-                @media(min-width:2500px){
+                @media(min-width:2440px){
                     height: 50rem;
                 }
+           
+           
+           
+                  
+            
               
             }
             .artistBio{
