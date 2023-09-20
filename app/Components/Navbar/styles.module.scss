@@ -32,7 +32,7 @@
     }
     p:nth-child(1){
         font-family: Basement;
-        cursor: pointer;
+        
     }
     @media(min-width:768px) {
         height: max(64px,10.3225806452vw);
@@ -165,7 +165,7 @@
             color: #ff4d00;
          }
         
-        a{  
+        a,p{  
             text-decoration: none;
             color: white;
             font-size: max(56px,6.4vw);

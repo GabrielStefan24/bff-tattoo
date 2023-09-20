@@ -14,36 +14,30 @@ const Navbar = ({ lenisInstance }) => {
   const currentPath = usePathname();
   const headerRef = useRef(null);
 
+
   useEffect(() => {
     const handleResize = () => {
-        if (window.innerWidth < 768) {
-            setIsPhone(true);
-        } else {
-            setIsPhone(false);
-        }
+      if (window.innerWidth < 768) {
+        setIsPhone(true);
+      } else {
+        setIsPhone(false);
+      }
     };
-
-    if (isActive) {
-        lenisInstance && lenisInstance.stop();  
-    } else {
-        lenisInstance && lenisInstance.start(); 
-    }
 
     handleResize();
 
     window.addEventListener("resize", handleResize);
 
     if (headerRef.current) {
-        const height = getComputedStyle(headerRef.current).height;
-        setInitialHeight(height);
+      const height = getComputedStyle(headerRef.current).height;
+      setInitialHeight(height);
     }
 
     return () => {
-        window.removeEventListener("resize", handleResize);
-        lenisInstance && lenisInstance.start(); 
+      window.removeEventListener("resize", handleResize);
+      lenisInstance && lenisInstance.start();
     };
-}, [isActive]);
-
+  }, [isActive]);
 
   const isActiveLink = (href) => currentPath === href;
 
@@ -58,19 +52,8 @@ const Navbar = ({ lenisInstance }) => {
       animate={isActive ? "open" : "closed"}
       className={styles.header}
     >
-     <div className={styles.menuContent}>
-        <p
-          onClick={() => {
-            if (lenisInstance) {
-              lenisInstance.scrollTo(0, {
-                lerp: 0.05,
-                duration: 1,
-              });
-            }
-          }}
-        >
-          BLACK FLAG.
-        </p>
+      <div className={styles.menuContent}>
+        <p>BLACK FLAG.</p>
         {!isPhone && (
           <div className={styles.logo}>
             <span>CIRCA</span>
@@ -125,11 +108,7 @@ const Navbar = ({ lenisInstance }) => {
             <span>2023</span>
           </div>
         )}
-        <div
-          className={styles.menu}
-          onMouseDown={() => setIsActive(!isActive)}
-          onClick={console.log(isActive)}
-        >
+        <div className={styles.menu} onMouseDown={() => setIsActive(!isActive)}>
           <div
             className={`${styles.burgerIcon} ${
               isActive ? styles.burgerActive : ""
@@ -162,7 +141,7 @@ const Navbar = ({ lenisInstance }) => {
           <a href="mailto:">blablablabla@gmail.com</a>
         </div>
       </motion.div>
-      
+
       <div className={styles.links}>
         <AnimatePresence>
           {isActive && (
@@ -175,7 +154,13 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={0}
               >
-                <Link href="/" className={isActiveLink('/') ? styles.activeLink : ''}>
+                <Link
+                  href="/"
+                  className={isActiveLink("/") ? styles.activeLink : ""}
+                  onClick={() => {
+                    setIsActive(false);
+                  }}
+                >
                   HOME
                 </Link>
               </motion.div>
@@ -188,8 +173,14 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={1}
               >
-                <Link href="/gallery"  className={isActiveLink('/gallery') ? styles.activeLink : ''}>
-                GALLERY
+                <Link
+                  href="/gallery"
+                  className={isActiveLink("/gallery") ? styles.activeLink : ""}
+                  onClick={() => {
+                    setIsActive(false);
+                  }}
+                >
+                  GALLERY
                 </Link>
               </motion.div>
 
@@ -201,9 +192,21 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={2}
               >
-                <Link href="/contact"   className={isActiveLink('/contact') ? styles.activeLink : ''}>
-                CONTACT
-                </Link>
+                <p
+                  onClick={() => {
+                    if (lenisInstance) {
+                      lenisInstance.scrollTo(10000, {
+                        lerp: 0.05,
+                        duration: 1,
+                      });
+                      setTimeout(() => {
+                        setIsActive(false);
+                      }, 2000);
+                    }
+                  }}
+                >
+                  CONTACT
+                </p>
               </motion.div>
 
               <motion.div
@@ -214,8 +217,14 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={3}
               >
-                <Link href="/faq"   className={isActiveLink('/faq') ? styles.activeLink : ''}>
-                FAQ
+                <Link
+                  href="/faq"
+                  className={isActiveLink("/faq") ? styles.activeLink : ""}
+                  onClick={() => {
+                    setIsActive(false);
+                  }}
+                >
+                  FAQ
                 </Link>
               </motion.div>
             </>

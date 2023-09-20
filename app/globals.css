@@ -18,6 +18,9 @@
     background-color: #000000
   
  }
+  html {
+    height: auto;
+  }
 }
 body{
   overflow-x: hidden;

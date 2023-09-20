@@ -32,6 +32,8 @@ const Studio = () => {
   }, []);
 
   const animate = () => {
+    if (!stickyMask.current) return;
+
     const maskSizeProgress = (targetMaskSize * getScrollProgress()) / 10;
     stickyMask.current.style.webkitMaskSize =
       (initialMaskSize + maskSizeProgress) * 80 + "%";
@@ -39,6 +41,8 @@ const Studio = () => {
   };
 
   const getScrollProgress = () => {
+    if (!stickyMask.current || !studioContainer.current) return 0;
+
     const scrollProgress =
       stickyMask.current.offsetTop /
       (studioContainer.current.getBoundingClientRect().height -
