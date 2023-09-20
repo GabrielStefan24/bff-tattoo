@@ -1,17 +1,17 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import styles from "./styles.module.scss";
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import { opacity, slideUp, linkVariants, showLinks } from "./anim";
+import { motion, AnimatePresence } from "framer-motion";
+import { opacity, slideUp, linkVariants } from "./anim";
 import Link from "next/link";
-import { AnimatePresence } from "framer-motion";
 
 const Navbar = ({ lenisInstance }) => {
   const [isPhone, setIsPhone] = useState(false);
   const [initialHeight, setInitialHeight] = useState(null);
   const [isActive, setIsActive] = useState(false);
-
+  const currentPath = usePathname();
   const headerRef = useRef(null);
 
   useEffect(() => {
@@ -22,6 +22,12 @@ const Navbar = ({ lenisInstance }) => {
         setIsPhone(false);
       }
     };
+
+    if (isActive) {
+      lenisInstance && lenisInstance.stop(); // Stop Locomotive Scroll
+    } else {
+      lenisInstance && lenisInstance.start(); // Start Locomotive Scroll
+    }
 
     handleResize();
 
@@ -34,8 +40,11 @@ const Navbar = ({ lenisInstance }) => {
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      lenisInstance && lenisInstance.start(); // Ensure scrolling is enabled when the component is unmounted
     };
-  }, []);
+  }, [isActive]);
+
+  const isActiveLink = (href) => currentPath === href;
 
   const test = {
     open: { height: "100vh" },
@@ -139,7 +148,7 @@ const Navbar = ({ lenisInstance }) => {
         variants={slideUp}
         initial="initial"
         animate={isActive ? "open" : "closed"}
-        className={styles.menuFooter}
+        className={`${styles.menuFooter} ${isActive ? styles.display : ""}`}
       >
         <div className={`${styles.socials} ${isActive ? styles.events : ""}`}>
           <p>SOCIAL MEDIA</p>
@@ -165,7 +174,12 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={0}
               >
-                <Link href="/">HOME</Link>
+                <Link
+                  href="/"
+                  className={isActiveLink("/") ? styles.activeLink : ""}
+                >
+                  HOME
+                </Link>
               </motion.div>
 
               <motion.div
@@ -176,7 +190,12 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={1}
               >
-                <Link href="/gallery">GALLERY</Link>
+                <Link
+                  href="/gallery"
+                  className={isActiveLink("/gallery") ? styles.activeLink : ""}
+                >
+                  GALLERY
+                </Link>
               </motion.div>
 
               <motion.div
@@ -187,7 +206,12 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={2}
               >
-                <Link href="/">CONTACT</Link>
+                <Link
+                  href="/contact"
+                  className={isActiveLink("/contact") ? styles.activeLink : ""}
+                >
+                  CONTACT
+                </Link>
               </motion.div>
 
               <motion.div
@@ -198,7 +222,12 @@ const Navbar = ({ lenisInstance }) => {
                 exit="exit"
                 custom={3}
               >
-                <Link href="/">FAQ</Link>
+                <Link
+                  href="/faq"
+                  className={isActiveLink("/faq") ? styles.activeLink : ""}
+                >
+                  FAQ
+                </Link>
               </motion.div>
             </>
           )}

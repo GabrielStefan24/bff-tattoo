@@ -8,6 +8,7 @@ import Studio from "./Components/Studio";
 import Gallery from "./Components/Gallery";
 import Lenis from "@studio-freight/lenis";
 import Preloader from "./Components/Preloader";
+import Contact from "./Components/Contact";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -52,6 +53,7 @@ export default function Home() {
           <Artists />
           <Studio />
           <Gallery />
+          <Contact />
         </>
       )}
     </main>

@@ -2,26 +2,33 @@
 
     height: 100vh;
     width: 100vw;
-    @media(min-width:769px) and (max-width:912px) {
+    @media(min-width:768px) and (max-width:912px) {
         height: 20vh;
     }
-    @media(max-width:768px){
-        height: 100vh;
-        margin-bottom: 10vh;
+    @media(max-width:767px){
+        height: 130vh;
+        margin-bottom: 20vh;
+    }
+    @media(width:412px){
+        height: 75vh;
+        margin-bottom: 20vh;
     }
     @media(max-height:677px){
-        height: 140vh;
+        height: 180vh;
+    }
+    @media(max-width:280px){
+        height: 130vh;
     }
     
 
     .imgContainer{
         position: relative;
-      
+        margin: 0 auto;
         display: flex;
         gap: 4%;
         align-items: center;
         justify-content: center;
-        @media(max-width:768px){
+        @media(max-width:767px){
             flex-direction: column;
             align-items: center;
             gap: 2rem;
@@ -50,7 +57,6 @@
                 z-index: 21;
                 transition: opacity 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
                 opacity: 0;
-        
                 display: block;
                 position: absolute;
                 width: 100%;
@@ -58,21 +64,28 @@
             }
         
             img {
-                height: clamp(20rem,35rem,50rem);
+                height: 22rem;
                 width: auto;
-                border-radius: 1%;
+                border-radius: 2%;
                 opacity: 1;
                 filter: grayscale(100%) brightness(0.6);
                
                 display: block; 
                 @media(max-width:912px){
-                    height: 20rem;
+                    height: 18rem;
                     margin-bottom: 0.5rem;
                     
                   }
+                  @media(min-width:1440px){
+                    height: 30rem;
+                }
+                @media(min-width:1900px){
+                    height: 40rem;
+                }
                 @media(min-width:2500px){
                     height: 50rem;
                 }
+              
             }
             .artistBio{
                 position: absolute;
