@@ -176,6 +176,7 @@ const Navbar = () => {
                   className={isActiveLink("/gallery") ? styles.activeLink : ""}
                   onClick={() => {
                     setIsActive(false);
+                    scrollTo(0,0)
                   }}
                 >
                   GALLERY
@@ -218,6 +219,7 @@ const Navbar = () => {
                   className={isActiveLink("/faq") ? styles.activeLink : ""}
                   onClick={() => {
                     setIsActive(false);
+                    scrollTo(0, 0);
                   }}
                 >
                   FAQ

@@ -1,50 +1,63 @@
 "use client";
 
 import styles from "./styles.module.scss";
-import gsap from "gsap";
-import { useRef } from "react";
 
-
+import { opacity, opacityImg } from "./variants";
+import { motion } from "framer-motion";
 
 const Artists = () => {
-  const textRef = useRef(null);
-  const container = useRef(null);
-  const pair1Ref = useRef(null);
-  const pair2Ref = useRef(null);
-  const pair3Ref = useRef(null);
-
   return (
     <>
       <section className={styles.gallery}>
-        <h1 ref={textRef}>CHOOSE YOUR ARTIST</h1>
-        <div className={styles.imgContainer} ref={container}>
-          <div className={styles.imgPair} ref={pair1Ref}>
-            <a href="/gallery/eduard">
-              <img src="/artist3.jpg" alt="photo of Eduard Stancu" />
+        <motion.h1 variants={opacity} initial="initial" animate="enter">
+          CHOOSE YOUR ARTIST
+        </motion.h1>
+        <div className={styles.imgContainer}>
+          <motion.div
+            custom="1"
+            className={styles.imgPair}
+            variants={opacityImg}
+            initial="initial"
+            animate="enter"
+          >
+            <a href="gallery/Eduard">
+              <img src="/artist3.webp" alt="photo of Eduard Stancu" />
             </a>
             <div className={styles.artistBio}>
               <p>Eduard Stancu</p>
               <p>Black & Grey</p>
             </div>
-          </div>
-          <div className={styles.imgPair} ref={pair2Ref}>
-            <a href="/gallery/mihaela">
-              <img src="/artist3.jpg" alt="photo of Mihaela" />
+          </motion.div>
+          <motion.div
+            custom="2"
+            className={styles.imgPair}
+            variants={opacityImg}
+            initial="initial"
+            animate="enter"
+          >
+            <a href="gallery/Mihaela">
+              <img src="/artist3.webp" alt="photo of Mihaela" />
             </a>
             <div className={styles.artistBio}>
               <p>Mihaela Maier</p>
               <p>Black & Grey</p>
             </div>
-          </div>
-          <div className={styles.imgPair} ref={pair3Ref}>
-            <a href="/gallery/ruse">
-              <img src="/artist3.jpg" alt="photo of Radu" />
+          </motion.div>
+          <motion.div
+            custom="3"
+            className={styles.imgPair}
+            variants={opacityImg}
+            initial="initial"
+            animate="enter"
+          >
+            <a href="gallery/Radu">
+              <img src="/artist3.webp" alt="photo of Radu" />
             </a>
             <div className={styles.artistBio}>
               <p>Ruse Radu</p>
               <p>Black & Grey</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

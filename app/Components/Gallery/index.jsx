@@ -92,12 +92,8 @@ const Gallery = () => {
         </a>
       </div>
 
-      <a
-        className={styles.text}
-        href="https://www.instagram.com/bf.ttt/"
-        target="_blanc"
-      >
-        follow us
+      <a className={styles.text} href="/gallery">
+        gallery
       </a>
     </section>
   );

@@ -29,7 +29,7 @@ const Artists = () => {
         opacity: 0,
 
         scrollTrigger: {
-          trigger: pair3Ref.current,
+          trigger: pair2Ref.current,
           start: "top bottom",
           end: "top center",
           scrub: 0.5,
@@ -58,7 +58,7 @@ const Artists = () => {
       <div className={styles.imgContainer} ref={container}>
         <div className={styles.imgPair} ref={pair1Ref}>
           <a href="https://www.instagram.com/ed_does" target="_blank">
-            <img src="/artist3.jpg" alt="photo of Eduard Stancu" />
+            <img src="/artist3.webp" alt="photo of Eduard Stancu" />
           </a>
           <div className={styles.artistBio}>
             <p>Eduard Stancu</p>
@@ -67,7 +67,7 @@ const Artists = () => {
         </div>
         <div className={styles.imgPair} ref={pair2Ref}>
           <a href="https://www.instagram.com/sevilens_craft" target="_blank">
-            <img src="/artist3.jpg" alt="photo of Mihaela" />
+            <img src="/artist3.webp" alt="photo of Mihaela" />
           </a>
           <div className={styles.artistBio}>
             <p>Eduard Stancu</p>
@@ -76,7 +76,7 @@ const Artists = () => {
         </div>
         <div className={styles.imgPair} ref={pair3Ref}>
           <a href="https://www.instagram.com/russetattoo" target="_blank">
-            <img src="/artist3.jpg" alt="photo of Radu" />
+            <img src="/artist3.webp" alt="photo of Radu" />
           </a>
           <div className={styles.artistBio}>
             <p>Eduard Stancu</p>

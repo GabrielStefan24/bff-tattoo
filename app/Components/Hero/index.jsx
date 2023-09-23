@@ -26,7 +26,14 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.cover} ref={coverRef}></div>
-      <img src="/hero.jpg" alt="Hero image" ref={imageRef} />
+      <video
+        src="/banner.mp4"
+        alt="Hero image"
+        ref={imageRef}
+        autoPlay
+        muted
+        loop
+      />
       <h1 ref={text}>we make cool art that lasts forever.</h1>
     </section>
   );
