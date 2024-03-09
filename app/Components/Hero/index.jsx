@@ -32,6 +32,7 @@ const Hero = () => {
         ref={imageRef}
         autoPlay
         muted
+        playsInline 
         loop
       />
       <h1 ref={text}>we make cool art that lasts forever.</h1>
