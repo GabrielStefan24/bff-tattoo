@@ -19,10 +19,10 @@ const Contact = () => {
         </div>
         <div className={styles.adress}>
           <p>ADRESS</p>
-          <span>
+          <a href="https://maps.app.goo.gl/1SRzt2yeY1q1e1Ka9">
             Strada Știrbei Vodă 83, <br />
             București 010124
-          </span>
+          </a>
         </div>
       </div>
     </footer>

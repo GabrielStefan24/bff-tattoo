@@ -6,6 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { opacity, slideUp, linkVariants } from "./anim";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isPhone, setIsPhone] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
   const currentPath = usePathname();
   const headerRef = useRef(null);
-
+  const router = useRouter();
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -39,6 +40,10 @@ const Navbar = () => {
 
   const isActiveLink = (href) => currentPath === href;
 
+  const goToHomePage = () => {
+    router.push("/");
+  };
+
   const slideDown = {
     open: { height: "101vh" },
     closed: { height: initialHeight },
@@ -51,7 +56,7 @@ const Navbar = () => {
       className={styles.header}
     >
       <div className={styles.menuContent}>
-        <p>BLACK FLAG.</p>
+        <p onClick={goToHomePage} className="cursor-pointer">BLACK FLAG.</p>
         {!isPhone && (
           <div className={styles.logo}>
             <span>CIRCA</span>
@@ -131,7 +136,10 @@ const Navbar = () => {
         <div className={`${styles.socials} ${isActive ? styles.events : ""}`}>
           <p>SOCIAL MEDIA</p>
           <div>
-            <a href="https://www.instagram.com/bf.ttt/">INSTAGRAM — </a> <a href="https://www.facebook.com/profile.php?id=100093651525656">FACEBOOK</a>
+            <a href="https://www.instagram.com/bf.ttt/">INSTAGRAM — </a>{" "}
+            <a href="https://www.facebook.com/profile.php?id=100093651525656">
+              FACEBOOK
+            </a>
           </div>
         </div>
         <div className={styles.contact}>
@@ -176,7 +184,7 @@ const Navbar = () => {
                   className={isActiveLink("/gallery") ? styles.activeLink : ""}
                   onClick={() => {
                     setIsActive(false);
-                    scrollTo(0,0)
+                    scrollTo(0, 0);
                   }}
                 >
                   GALLERY
@@ -213,18 +221,7 @@ const Navbar = () => {
                 animate="open"
                 exit="exit"
                 custom={3}
-              >
-                <Link
-                  href="/faq"
-                  className={isActiveLink("/faq") ? styles.activeLink : ""}
-                  onClick={() => {
-                    setIsActive(false);
-                    scrollTo(0, 0);
-                  }}
-                >
-                  FAQ
-                </Link>
-              </motion.div>
+              ></motion.div>
             </>
           )}
         </AnimatePresence>

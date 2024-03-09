@@ -16,7 +16,7 @@ const Faq = () => {
       <div className="w-[95%] max-w-6xl mx-auto md:mt-14 mt-2">
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
-            <AccordionTrigger> Lorem ipsum dolor sit?</AccordionTrigger>
+            <AccordionTrigger> Ursul este in camara,unde este ursul?</AccordionTrigger>
             <AccordionContent>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
               deleniti quam maxime, qui quisquam repellat veniam. Quibusdam,
@@ -25,7 +25,7 @@ const Faq = () => {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger> Lorem ipsum dolor sit?</AccordionTrigger>
+            <AccordionTrigger> Ursul este in camara,unde este ursul?</AccordionTrigger>
             <AccordionContent>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat
               delectus impedit debitis beatae provident unde praesentium nihil
@@ -34,7 +34,7 @@ const Faq = () => {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger> Lorem ipsum dolor sit?</AccordionTrigger>
+            <AccordionTrigger> Ursul este in camara,unde este ursul?</AccordionTrigger>
             <AccordionContent>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
               dolore hic, fuga accusantium aliquid ex quisquam. Qui et ipsa
@@ -43,7 +43,7 @@ const Faq = () => {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-4">
-            <AccordionTrigger> Lorem ipsum dolor sit?</AccordionTrigger>
+            <AccordionTrigger> Ursul este in camara,unde este ursul?</AccordionTrigger>
             <AccordionContent>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
               deleniti quam maxime, qui quisquam repellat veniam. Quibusdam,
@@ -52,7 +52,7 @@ const Faq = () => {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-5">
-            <AccordionTrigger> Lorem ipsum dolor sit?</AccordionTrigger>
+            <AccordionTrigger> Ursul este in camara,unde este ursul?</AccordionTrigger>
             <AccordionContent>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat
               delectus impedit debitis beatae provident unde praesentium nihil
@@ -61,7 +61,7 @@ const Faq = () => {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-6">
-            <AccordionTrigger> Lorem ipsum dolor sit?</AccordionTrigger>
+            <AccordionTrigger> Ursul este in camara,unde este ursul?</AccordionTrigger>
             <AccordionContent>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
               dolore hic, fuga accusantium aliquid ex quisquam. Qui et ipsa
@@ -70,7 +70,7 @@ const Faq = () => {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-7">
-            <AccordionTrigger> Lorem ipsum dolor sit?</AccordionTrigger>
+            <AccordionTrigger> Ursul este in camara,unde este ursul?</AccordionTrigger>
             <AccordionContent>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
               deleniti quam maxime, qui quisquam repellat veniam. Quibusdam,
@@ -79,7 +79,7 @@ const Faq = () => {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-8">
-            <AccordionTrigger> Lorem ipsum dolor sit?</AccordionTrigger>
+            <AccordionTrigger> Ursul este in camara,unde este ursul?</AccordionTrigger>
             <AccordionContent>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat
               delectus impedit debitis beatae provident unde praesentium nihil
@@ -88,7 +88,7 @@ const Faq = () => {
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-9">
-            <AccordionTrigger> Lorem ipsum dolor sit?</AccordionTrigger>
+            <AccordionTrigger> Ursul este in camara,unde este ursul?</AccordionTrigger>
             <AccordionContent>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
               dolore hic, fuga accusantium aliquid ex quisquam. Qui et ipsa
