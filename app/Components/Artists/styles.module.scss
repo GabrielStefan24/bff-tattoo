@@ -108,10 +108,10 @@
                 p{
                     color: white;
                     z-index: 22;
-                    font-size: clamp(0.7rem, 1.5vw, 1.6rem);
+                    font-size: clamp(0.6rem, 1.2vw, 1.4rem);
                 }
                 p:first-of-type {
-                    font-size: clamp(1rem, 2vw, 2rem);
+                    font-size: clamp(0.8rem, 1.5vw, 2rem);
                 }
             }
         }

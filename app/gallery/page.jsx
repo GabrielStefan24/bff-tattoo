@@ -21,7 +21,7 @@ const Artists = () => {
             animate="enter"
           >
             <a href="gallery/Eduard">
-              <img src="/artist3.webp" alt="photo of Eduard Stancu" />
+              <img src="/Eduard.webp" alt="photo of Eduard Stancu" />
             </a>
             <div className={styles.artistBio}>
               <p>Eduard Stancu</p>
@@ -36,7 +36,7 @@ const Artists = () => {
             animate="enter"
           >
             <a href="gallery/Mihaela">
-              <img src="/artist3.webp" alt="photo of Mihaela" />
+              <img src="/Mihaela.webp" alt="photo of Mihaela" />
             </a>
             <div className={styles.artistBio}>
               <p>Mihaela Maier</p>
@@ -51,7 +51,7 @@ const Artists = () => {
             animate="enter"
           >
             <a href="gallery/Radu">
-              <img src="/artist3.webp" alt="photo of Radu" />
+              <img src="/Radu.webp" alt="photo of Radu" />
             </a>
             <div className={styles.artistBio}>
               <p>Ruse Radu</p>

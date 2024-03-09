@@ -131,12 +131,12 @@ const Navbar = () => {
         <div className={`${styles.socials} ${isActive ? styles.events : ""}`}>
           <p>SOCIAL MEDIA</p>
           <div>
-            <a href="">INSTAGRAM — </a> <a href="">FACEBOOK</a>
+            <a href="https://www.instagram.com/bf.ttt/">INSTAGRAM — </a> <a href="https://www.facebook.com/profile.php?id=100093651525656">FACEBOOK</a>
           </div>
         </div>
         <div className={styles.contact}>
           <p>GET IN TOUCH</p>
-          <a href="mailto:">blablablabla@gmail.com</a>
+          <a href="mailto:bflag.ttt@gmail.com">bflag.ttt@gmail.com</a>
         </div>
       </motion.div>
 

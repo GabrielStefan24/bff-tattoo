@@ -8,7 +8,7 @@ const Contact = () => {
       <div className={styles.container}>
         <div className={styles.contact}>
           <p>CONTACT</p>
-          <a href="tel:+40792 797 166">0792 797 166</a>
+          <a href="tel:+40792 797 166">+40 792 797 166</a>
         </div>
         <div className={styles.schedule}>
           <p>SCHEDULE</p>
@@ -20,7 +20,7 @@ const Contact = () => {
         <div className={styles.adress}>
           <p>ADRESS</p>
           <span>
-            Strada Știrbei Vodă 85, <br />
+            Strada Știrbei Vodă 83, <br />
             București 010124
           </span>
         </div>

@@ -48,6 +48,7 @@ const Artist = () => {
 
   const currentArtist = pathname.split("/").pop();
   const data = artistData.find((artist) => artist.path === currentArtist);
+ 
 
   return (
     <>

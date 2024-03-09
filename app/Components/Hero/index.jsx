@@ -26,8 +26,8 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.cover} ref={coverRef}></div>
-      <img
-        src="/hero.jpg"
+      <video
+        src="/FinalVideo.mp4"
         alt="Hero image"
         ref={imageRef}
         autoPlay
