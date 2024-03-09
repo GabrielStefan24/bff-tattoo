@@ -6,14 +6,18 @@
   @media (min-width: 768px) {
     margin-top: max(64px, 10.3225806452vw);
   }
-  @media(min-width:768px){
-    height: 80vw;
+  @media (min-width: 768px) {
+    height: 120vw;
   }
-  @media(min-width:1920px){
+  @media (min-width: 1900px) {
     height: 60vw;
+  }
+  @media (width: 768px) {
+    height: 140vw;
   }
   @media (min-width: 1024px) {
     margin-top: 4.1666666667vw;
+    height: 60vw;
   }
   video {
     filter: brightness(50%);
@@ -23,10 +27,14 @@
 
     object-fit: cover;
     object-position: center;
-    @media (max-width: 1920px) {
-      min-height: calc(70vw - 10.1666666667vw);
+    @media (min-width: 1920px) {
+      min-height: calc(60vw - 15.1666666667vw);
     }
-    @media (max-width: 768px) {
+
+    @media (max-width: 1024px) {
+      min-height: calc(90vw - 10.1666666667vw);
+    }
+    @media (max-width: 767px) {
       min-height: calc(140vw);
     }
     @media (max-width: 281px) {

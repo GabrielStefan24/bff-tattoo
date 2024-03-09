@@ -34,9 +34,20 @@ const Studio = () => {
   const animate = () => {
     if (!stickyMask.current) return;
 
+    // Check the window's width to determine the device size
+    const windowWidth = window.innerWidth;
+    let multiplier;
+
+    if (windowWidth < 768) {
+      multiplier = 30;
+    } else {
+      multiplier = 80;
+    }
+
     const maskSizeProgress = (targetMaskSize * getScrollProgress()) / 10;
     stickyMask.current.style.webkitMaskSize =
-      (initialMaskSize + maskSizeProgress) * 80 + "%";
+      (initialMaskSize + maskSizeProgress) * multiplier + "%";
+
     requestAnimationFrame(animate);
   };
 

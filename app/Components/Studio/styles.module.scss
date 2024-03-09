@@ -5,6 +5,9 @@
 .container {
   position: relative;
   height: 200vw;
+  @media(max-width:768px){
+    height: 300vw;
+  }
 
   h2 {
     position: absolute;

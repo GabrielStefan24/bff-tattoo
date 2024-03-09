@@ -1,11 +1,22 @@
 .tiles {
-  height: 91dvh;
+  margin-top: 2vw;
+  height: 55vw;
   display: flex;
-  width: 100vw;
+  width: 100vw; /* Remains the same, as it already depends on viewport width */
   flex-direction: column;
   justify-content: flex-start;
-  margin-bottom: 1dvh;
+  margin-bottom: 1vw; /* Adjusted from dvh to vw for consistency */
   overflow-x: hidden;
+  @media (max-width: 767px) {
+    height: 200vw;
+    margin-top: 10vw;
+  }
+  @media (max-width: 1025px) {
+    height: 120vw;
+  }
+  @media (max-width: 291px) {
+    height: 240vw;
+  }
 }
 .tile {
   display: flex;
@@ -22,17 +33,46 @@
   animation-duration: 65s;
 }
 .tileImg {
-  height: 30dvh;
+  height: 18vw;
+  @media (max-width: 767px) {
+    height: 66vw;
+  }
+  @media (max-width: 1025px) {
+    height: 40vw;
+  }
+  @media (max-width: 291px) {
+    height: 80vw;
+  }
   img {
-    height: 29dvh;
+    height: 17vw;
     max-width: 60vw;
     border-radius: 20px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1 / 1;
+    @media (max-width: 767px) {
+      height: 60vw;
+    }
+    @media (max-width: 1025px) {
+      height: 40vw;
+    }
+    @media (max-width: 291px) {
+      height: 76vw;
+    }
   }
 }
 .gradient {
+  margin-top: 2vw;
   width: 100vw;
-  height: 90dvh;
+  height: 55vw;
+  @media (max-width: 767px) {
+    margin-top: 10vw;
+    height: 200vw;
+  }
+  @media (max-width: 1025px) {
+    height: 120vw;
+  }
+  @media (max-width: 291px) {
+    height: 240vw;
+  }
   position: absolute;
   top: 0;
   left: 0;
@@ -43,7 +83,7 @@
   flex-direction: column;
 
   h1 {
-    font-size: clamp(2rem, 4vw, 8rem);
+    font-size: clamp(1.5rem, 4vw, 8rem);
     color: #eeeeeec9;
     font-weight: 500;
     z-index: 4;
