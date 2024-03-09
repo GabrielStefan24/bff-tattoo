@@ -1,43 +1,40 @@
 .about {
-    margin-top: 5vh;
+  .aboutText {
+    padding: 1rem;
+    color: white;
+    font-size: max(20px, 2.8766666667vw);
+    line-height: 1.1964285714;
 
-    .aboutText {
-        padding: 1rem;
-        color: white;
-        font-size: max(20px, 2.8766666667vw);
-        line-height: 1.1964285714;
-        
-        z-index: 3;
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
+    z-index: 3;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
 
-        span {
-            opacity: 0.2; 
-        }
-
-        p {
-            margin-right: 0.2em;
-            letter-spacing: 0.0005em;
-        }
-
-        .aboutSpan {
-            font-size: max(20px, 2.8766666667vw);
-            line-height: 1.1964285714;
-            z-index: 3;
-            display: flex;
-            flex-wrap: wrap;
-            width: 65%;
-            margin-left: auto;
-
-            @media(max-width: 1024px) {
-                width: 100%;
-            }
-
-            span {
-                opacity: 0.2; 
-              
-            }
-        }
+    span {
+      opacity: 0.2;
     }
+
+    p {
+      margin-right: 0.2em;
+      letter-spacing: 0.0005em;
+    }
+
+    .aboutSpan {
+      font-size: max(20px, 2.8766666667vw);
+      line-height: 1.1964285714;
+      z-index: 3;
+      display: flex;
+      flex-wrap: wrap;
+      width: 65%;
+      margin-left: auto;
+
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
+
+      span {
+        opacity: 0.2;
+      }
+    }
+  }
 }

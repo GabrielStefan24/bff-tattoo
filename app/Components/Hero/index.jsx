@@ -3,7 +3,6 @@ import styles from "./styles.module.scss";
 import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 
-
 const Hero = () => {
   const imageRef = useRef(null);
   const coverRef = useRef(null);
@@ -24,19 +23,21 @@ const Hero = () => {
     });
   }, []);
   return (
-    <section className={styles.hero}>
-      <div className={styles.cover} ref={coverRef}></div>
-      <video
-        src="/FinalVideo.mp4"
-        alt="Hero image"
-        ref={imageRef}
-        autoPlay
-        muted
-        playsInline 
-        loop
-      />
-      <h1 ref={text}>we make cool art that lasts forever.</h1>
-    </section>
+    <>
+      <section className={styles.hero}>
+        <div className={styles.cover} ref={coverRef}></div>
+        <video
+          src="/FinalVideo.mp4"
+          alt="Hero image"
+          ref={imageRef}
+          autoPlay
+          muted
+          playsInline
+          loop
+        />
+        <h1 ref={text}>we make cool art that lasts forever.</h1>
+      </section>
+    </>
   );
 };
 

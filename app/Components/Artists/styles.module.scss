@@ -2,26 +2,26 @@
   height: 100%;
   width: 100vw;
   @media (min-width: 768px) and (max-width: 912px) {
-    height: 20vh;
+    height: 20vw;
   }
   @media (max-width: 767px) {
-    margin-bottom: 20vh;
+    margin-bottom: 20vw;
   }
   @media (width: 412px) {
-    margin-bottom: 20vh;
+    margin-bottom: 20vw;
   }
   @media (max-height: 677px) {
   }
   @media (max-width: 280px) {
   }
   @media (height: 915px) {
-    margin-bottom: 40vh;
+    margin-bottom: 40vw;
   }
 
   .imgContainer {
     position: relative;
     margin: 0 auto;
-    margin-top: 10vh;
+    margin-top: 10vw;
     display: flex;
     gap: 4%;
     align-items: center;

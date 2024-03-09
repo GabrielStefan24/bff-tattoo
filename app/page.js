@@ -23,14 +23,6 @@ export default function Home() {
           : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
       },
     });
-    const documentHeight = () => {
-      const doc = document.documentElement;
-      doc.style.setProperty("--doc-height", `${window.innerHeight}px`);
-    };
-    window.addEventListener("resize", documentHeight);
-    documentHeight();
-
-    return () => window.removeEventListener("resize", documentHeight);
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);

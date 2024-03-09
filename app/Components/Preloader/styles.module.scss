@@ -1,10 +1,10 @@
 .tiles {
-  height: 91vh;
+  height: 91dvh;
   display: flex;
   width: 100vw;
   flex-direction: column;
   justify-content: flex-start;
-  margin-bottom: 1vh;
+  margin-bottom: 1dvh;
   overflow-x: hidden;
 }
 .tile {
@@ -22,9 +22,9 @@
   animation-duration: 65s;
 }
 .tileImg {
-  height: 30vh;
+  height: 30dvh;
   img {
-    height: 29vh;
+    height: 29dvh;
     max-width: 60vw;
     border-radius: 20px;
     aspect-ratio: 1/1;
@@ -32,7 +32,7 @@
 }
 .gradient {
   width: 100vw;
-  height: 90vh;
+  height: 90dvh;
   position: absolute;
   top: 0;
   left: 0;
@@ -47,7 +47,7 @@
     color: #eeeeeec9;
     font-weight: 500;
     z-index: 4;
-    margin-bottom: 2vh;
+    margin-bottom: 2dvh;
     line-height: 0.8;
     text-transform: uppercase;
     font-family: Basement;
@@ -55,7 +55,7 @@
   }
   button {
     position: relative;
-    margin-top: 2vh;
+    margin-top: 2dvh;
     color: #eeeeeec9;
     font-size: clamp(1.2rem, 4vw, 2rem);
     z-index: 4;
