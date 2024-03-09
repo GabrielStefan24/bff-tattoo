@@ -42,7 +42,7 @@
 }
 .gradient{
     width: 100vw;
-    height: 100vh;
+    height: var(--doc-height);
     position: absolute;
     top: 0;
     left: 0;

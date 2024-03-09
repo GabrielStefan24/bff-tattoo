@@ -1,52 +1,50 @@
-.main{
-    margin-bottom: 20vh;
-   }
-  
-  .container{
-    position: relative;
-    height: 250vh;
+.main {
+  margin-bottom: 20vh;
+}
 
+.container {
+  position: relative;
+  height: 250vh;
 
-    h2{
-        position: absolute;
-        top: 10%;
-        opacity: 0; 
-        color: white;
-        line-height: 110%;
-        letter-spacing: 0.2rem;
-        font-size: max(48px, 9.2041666667vw);
-        font-family: Basement;
-        text-align: center;
-        width: 100%;
-        @media(min-width: 1024px){
-            top: 0;
-        }
+  h2 {
+    position: absolute;
+    top: 10%;
+    opacity: 0;
+    color: white;
+    line-height: 110%;
+    letter-spacing: 0.2rem;
+    font-size: max(48px, 9.2041666667vw);
+    font-family: Basement;
+    text-align: center;
+    width: 100%;
+    @media (min-width: 1024px) {
+      top: 0;
     }
   }
-  
-  .stickyMask{
-    display: flex;
-    overflow: hidden;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    transform: translate3d(0, 0, 0);
-    align-items: center;
-    justify-content: center;
-    mask-image: url('/Test.svg');
-    -webkit-mask-image: url("/Test.svg");
-    mask-position: 50% center;
-    -webkit-mask-position: 50% center;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-  
-  }
-  
-  .stickyMask img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    aspect-ratio: 1/1;
-    
-  }
+}
+
+.stickyMask {
+  display: flex;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: var(--doc-height);
+
+  transform: translate3d(0, 0, 0);
+  align-items: center;
+  justify-content: center;
+  mask-image: url("/Test.svg");
+  -webkit-mask-image: url("/Test.svg");
+  mask-position: 50% center;
+  -webkit-mask-position: 50% center;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+.stickyMask img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 1/1;
+}

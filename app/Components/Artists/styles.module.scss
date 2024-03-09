@@ -1,23 +1,23 @@
 .artists {
 
-    height: 100vh;
+    height: var(--doc-height);
     width: 100vw;
     @media(min-width:768px) and (max-width:912px) {
         height: 20vh;
     }
     @media(max-width:767px){
-        height: 130vh;
+        height: calc(var(--doc-height) + 20vh);
         margin-bottom: 20vh;
     }
     @media(width:412px){
-        height: 75vh;
+        height: calc(var(--doc-height) - 20vh);
         margin-bottom: 20vh;
     }
     @media(max-height:677px){
-        height: 180vh;
+        height: calc(var(--doc-height) + 60vh);
     }
     @media(max-width:280px){
-        height: 130vh;
+        height: calc(var(--doc-height) + 30vh);
     }
     @media(height:915px){
         margin-bottom: 40vh;
