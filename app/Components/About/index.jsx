@@ -3,8 +3,11 @@ import styles from "./styles.module.scss";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
+import { useTranslations } from "next-intl";
 
 const About = () => {
+  const t = useTranslations("Index");
+
   const refs = useRef([]);
   const container = useRef(null);
   gsap.registerPlugin(ScrollTrigger);
@@ -27,11 +30,8 @@ const About = () => {
     });
   };
 
-  const phrase1 =
-    "We are a team of specialists, crafting designs across a spectrum of styles and complexities. We don’t just ink, we are drawing with surgical precision, creating exceptional masterpieces on skin.";
-
-  const phrase2 =
-    "We push the boundaries of tattoo artistry, and then venture even further, just for the thrill of it.";
+  const phrase1 = t("teamOfSpecialists");
+  const phrase2 = t("pushBoundaries");
 
   const splitWords = (phrase) => {
     return phrase.split(" ").map((word, index) => (

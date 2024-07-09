@@ -7,14 +7,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { opacity, slideUp, linkVariants } from "./anim";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const Navbar = () => {
+  const t = useTranslations("Header");
   const [isPhone, setIsPhone] = useState(false);
   const [initialHeight, setInitialHeight] = useState(null);
   const [isActive, setIsActive] = useState(false);
   const currentPath = usePathname();
   const headerRef = useRef(null);
   const router = useRouter();
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -38,7 +41,21 @@ const Navbar = () => {
     };
   }, []);
 
-  const isActiveLink = (href) => currentPath === href;
+  const segments = currentPath.split("/");
+  const locale = segments[1];
+
+  const isActiveLink = (href) => {
+    const normalizedHref = `/${locale}${href}`;
+
+    if (href === "/") {
+      return currentPath === normalizedHref || currentPath === `/${locale}`;
+    }
+
+    return (
+      currentPath === normalizedHref ||
+      currentPath.startsWith(normalizedHref + "/")
+    );
+  };
 
   const goToHomePage = () => {
     router.push("/");
@@ -56,7 +73,9 @@ const Navbar = () => {
       className={styles.header}
     >
       <div className={styles.menuContent}>
-        <p onClick={goToHomePage} className="cursor-pointer">BLACK FLAG.</p>
+        <p onClick={goToHomePage} className="cursor-pointer">
+          BLACK FLAG.
+        </p>
         {!isPhone && (
           <div className={styles.logo}>
             <span>CIRCA</span>
@@ -119,10 +138,10 @@ const Navbar = () => {
           ></div>
           <div className={styles.label}>
             <motion.p variants={opacity} animate={isActive ? "open" : "closed"}>
-              CLOSE
+              {t("close")}
             </motion.p>
             <motion.p variants={opacity} animate={isActive ? "closed" : "open"}>
-              MENU
+              {t("menu")}
             </motion.p>
           </div>
         </div>
@@ -134,7 +153,7 @@ const Navbar = () => {
         className={`${styles.menuFooter} ${isActive ? styles.display : ""}`}
       >
         <div className={`${styles.socials} ${isActive ? styles.events : ""}`}>
-          <p>SOCIAL MEDIA</p>
+          <p>{t("socialMedia")}</p>
           <div>
             <a href="https://www.instagram.com/bf.ttt/">INSTAGRAM — </a>{" "}
             <a href="https://www.facebook.com/profile.php?id=100093651525656">
@@ -143,7 +162,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className={styles.contact}>
-          <p>GET IN TOUCH</p>
+          <p>{t("getInTouch")}</p>
           <a href="mailto:bflag.ttt@gmail.com">bflag.ttt@gmail.com</a>
         </div>
       </motion.div>
@@ -161,13 +180,13 @@ const Navbar = () => {
                 custom={0}
               >
                 <Link
-                  href="/"
+                  href={`/${locale}/`}
                   className={isActiveLink("/") ? styles.activeLink : ""}
                   onClick={() => {
                     setIsActive(false);
                   }}
                 >
-                  HOME
+                  {t("home")}
                 </Link>
               </motion.div>
 
@@ -180,14 +199,14 @@ const Navbar = () => {
                 custom={1}
               >
                 <Link
-                  href="/gallery"
+                  href={`/${locale}/gallery`}
                   className={isActiveLink("/gallery") ? styles.activeLink : ""}
                   onClick={() => {
                     setIsActive(false);
                     scrollTo(0, 0);
                   }}
                 >
-                  GALLERY
+                  {t("gallery")}
                 </Link>
               </motion.div>
 
@@ -210,7 +229,7 @@ const Navbar = () => {
                     }, 800);
                   }}
                 >
-                  CONTACT
+                  {t("contact")}
                 </p>
               </motion.div>
 

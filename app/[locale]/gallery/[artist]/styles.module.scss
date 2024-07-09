@@ -16,6 +16,7 @@
   }
 
   .about {
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: max(1rem, 1vw);
@@ -49,7 +50,7 @@
     .detailsContainer {
       position: relative;
       overflow: hidden;
-      @media (min-width: 768px) {
+      @media (min-width: 1025px) {
         width: 70%;
       }
       .cover {

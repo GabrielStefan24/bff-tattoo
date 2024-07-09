@@ -1,5 +1,5 @@
-import Navbar from "../Components/Navbar";
-import Contact from "../Components/Contact";
+import Navbar from "../../Components/Navbar";
+import Contact from "../../Components/Contact";
 
 export const metadata = {
   title: "Artists",

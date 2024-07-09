@@ -1,24 +1,27 @@
 "use client";
 
 import styles from "./styles.module.scss";
+import { useTranslations } from "next-intl";
 
 const Contact = () => {
+  const t = useTranslations('Index');
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.contact}>
-          <p>CONTACT</p>
+          <p>{t('contact')}</p>
           <a href="tel:+40792 797 166">+40 792 797 166</a>
         </div>
         <div className={styles.schedule}>
-          <p>SCHEDULE</p>
+          <p>{t('schedule')}</p>
           <div>
-            <span>Monday - Saturday 10:30 - 18:00 </span>
-            <span>Sunday : Closed </span>
+            <span>{t('mondaySaturday')}</span>
+            <span>{t('sundayClosed')}</span>
           </div>
         </div>
-        <div className={styles.adress}>
-          <p>ADRESS</p>
+        <div className={styles.address}>
+          <p>{t('address')}</p>
           <a href="https://maps.app.goo.gl/1SRzt2yeY1q1e1Ka9">
             Strada Știrbei Vodă 83, <br />
             București 010124

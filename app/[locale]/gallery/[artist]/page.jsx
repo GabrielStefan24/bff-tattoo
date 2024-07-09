@@ -1,5 +1,5 @@
 "use client";
-import { artistData } from "../../Data/artistData";
+import { artistData } from "../../../Data/artistData";
 import styles from "./styles.module.scss";
 import { usePathname } from "next/navigation";
 import { opacity } from "../variants";

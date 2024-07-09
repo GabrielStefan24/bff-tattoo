@@ -4,13 +4,15 @@ import styles from "./styles.module.scss";
 
 import { opacity, opacityImg } from "./variants";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const Artists = () => {
+  const t = useTranslations("Gallery");
   return (
     <>
       <section className={styles.gallery}>
         <motion.h1 variants={opacity} initial="initial" animate="enter">
-          CHOOSE YOUR ARTIST
+          {t("choose")}
         </motion.h1>
         <div className={styles.imgContainer}>
           <motion.div
