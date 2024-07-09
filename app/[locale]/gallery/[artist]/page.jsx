@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { useRef, useLayoutEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import { firstRow } from "@/app/Data/imageData";
+import { useTranslations } from "next-intl";
 
 const Artist = () => {
   const pathname = usePathname();
@@ -15,6 +16,7 @@ const Artist = () => {
   const textRef = useRef(null);
   const carouselRef = useRef(null);
 
+  const t = useTranslations("Header");
   useLayoutEffect(() => {
     const lenis = new Lenis({
       lerp: 0.05,
@@ -48,7 +50,6 @@ const Artist = () => {
 
   const currentArtist = pathname.split("/").pop();
   const data = artistData.find((artist) => artist.path === currentArtist);
- 
 
   return (
     <>

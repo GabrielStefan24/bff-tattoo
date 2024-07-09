@@ -2,8 +2,10 @@
 import styles from "./styles.module.scss";
 import { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
+import { useTranslations } from "next-intl";
 
 const Hero = () => {
+  const t = useTranslations("Index");
   const imageRef = useRef(null);
   const coverRef = useRef(null);
   const text = useRef(null);
@@ -35,7 +37,7 @@ const Hero = () => {
           playsInline
           loop
         />
-        <h1 ref={text}>we make cool art that lasts forever.</h1>
+        <h1 ref={text}>{t("coolArt")}</h1>
       </section>
     </>
   );

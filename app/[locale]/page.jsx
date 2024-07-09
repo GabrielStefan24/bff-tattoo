@@ -7,8 +7,8 @@ import Studio from "../Components/Studio";
 import Gallery from "../Components/Gallery";
 import Lenis from "@studio-freight/lenis";
 import Preloader from "../Components/Preloader";
-import Navbar from "../Components/Navbar";
-import Contact from "../Components/Contact";
+import CarouselSize from "../Components/GoogleCard";
+
 import Faq from "../Components/Faq";
 
 export default function Home() {
@@ -45,14 +45,13 @@ export default function Home() {
         <Preloader setLoading={setLoading} />
       ) : (
         <>
-          <Navbar />
           <Hero />
           <About />
           <Artists />
           <Studio />
           <Gallery />
           <Faq />
-          <Contact />
+          <CarouselSize />
         </>
       )}
     </main>

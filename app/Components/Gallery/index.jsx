@@ -3,12 +3,15 @@
 import styles from "./styles.module.scss";
 import { firstRow, secondRow, thirdRow } from "@/app/Data/imageData";
 import gsap from "gsap";
+import { useTranslations } from "next-intl";
 import { useRef } from "react";
 
 const Gallery = () => {
   const plane1 = useRef(null);
   const plane2 = useRef(null);
   const plane3 = useRef(null);
+
+  const t = useTranslations("Header");
 
   let requestAnimationFrameId = null;
   let xForce = 0;
@@ -93,7 +96,7 @@ const Gallery = () => {
       </div>
 
       <a className={styles.text} href="/gallery">
-        gallery
+        {t("gallery")}
       </a>
     </section>
   );

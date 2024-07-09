@@ -7,7 +7,9 @@
         "address": "ADRESĂ",
         "mondaySaturday": "Luni - Sâmbătă 10:30 - 18:00",
         "sundayClosed": "Duminică: Închis",
-        "contact": "CONTACT"
+        "contact": "CONTACT",
+        "coolArt": "Creăm OPERE CARE NU SE STING NICIODATĂ",
+        "review": "RECENZII"
     },
     "Gallery": {
         "choose": "ALEGEȚI-VĂ ARTISTUL"
@@ -20,5 +22,19 @@
         "gallery": "GALERIE",
         "contact": "CONTACT",
         "getInTouch": "GET IN TOUCH"
+    },
+    "FAQ": {
+        "howPrice": "Cum se calculează prețul fiecărui tatuaj?",
+        "howPriceAnswer": "Calculăm prețul în funcție de dimensiunea și complexitatea fiecărui tatuaj. Trimite-ne ideile tale sau niște imagini care te inspiră și îți vom oferi un interval de preț potrivit pentru proiectul tău.",
+        "prepareAppointment": "Cum ar trebui să mă pregătesc pentru programarea mea?",
+        "prepareAppointmentAnswer": "Cele mai importante lucruri înainte de programare sunt să te asiguri că ești bine odihnit, hidratat și să porți haine confortabile. Evită alcoolul, cafeaua în exces și orice substanțe care pot subția sângele cu 24 de ore înainte de ședință.",
+        "bookAppointment": "Cum îmi fac o programare?",
+        "bookAppointmentAnswer": "Poți face o programare contactându-ne direct prin WhatsApp, Instagram sau Facebook. Apasă pe opțiunile de contact disponibile pe site-ul nostru sau pe paginile noastre de social media.",
+        "appointmentWaitTime": "Cât durează până la programarea mea?",
+        "appointmentWaitTimeAnswer": "Programările se fac în funcție de disponibilitatea artistului și de nevoile tale specifice. De obicei, timpul de așteptare poate varia de la câteva zile la câteva săptămâni, în funcție de programul artistului.",
+        "coverUps": "Faceți cover-up-uri?",
+        "coverUpsAnswer": "Da, specializăm în cover-up-uri. Succesul unui cover-up depinde de vârsta, designul și saturația culorilor tatuajului existent. Consultă-te cu artiștii noștri pentru a discuta opțiunile tale.",
+        "messageContent": "Ce ar trebui să conțină mesajul când fac o programare?",
+        "messageContentAnswer": "Când faci o programare, te rugăm să descrii ideea ta de tatuaj, să specifici amplasamentul și dimensiunea, și să indici dacă preferi alb-negru sau color. Dacă este un cover-up, menționează acest detaliu."
     }
 }

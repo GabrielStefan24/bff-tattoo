@@ -3,12 +3,13 @@ import { useRef, useLayoutEffect } from "react";
 import styles from "./styles.module.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { useTranslations } from "next-intl";
 
 const Studio = () => {
   const studioContainer = useRef(null);
   const stickyMask = useRef(null);
   const textRef = useRef(null);
-
+  const t = useTranslations("Index");
   const initialMaskSize = 0.2;
   const targetMaskSize = 20;
   const easing = 0.05;
@@ -66,7 +67,7 @@ const Studio = () => {
   return (
     <section className={styles.main}>
       <div ref={studioContainer} className={styles.container}>
-        <h2 ref={textRef}>OUR STUDIO</h2>
+        <h2 ref={textRef}>{t("ourStudio")}</h2>
         <div ref={stickyMask} className={styles.stickyMask}>
           <img src="/studio4.webp" alt="Photo of the studio" />
         </div>

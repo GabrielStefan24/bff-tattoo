@@ -127,7 +127,7 @@ const Navbar = () => {
                 fill="#EFEFEF"
               ></path>
             </svg>
-            <span>2023</span>
+            <span>{new Date().getFullYear()}</span>
           </div>
         )}
         <div className={styles.menu} onMouseDown={() => setIsActive(!isActive)}>
