@@ -9,6 +9,8 @@ import { useRef, useLayoutEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import { firstRow } from "@/app/Data/imageData";
 import { useTranslations } from "next-intl";
+import Navbar from "@/app/Components/Navbar";
+import Contact from "@/app/Components/Contact";
 
 const Artist = () => {
   const pathname = usePathname();
@@ -18,22 +20,6 @@ const Artist = () => {
 
   const t = useTranslations("Header");
   useLayoutEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.05,
-      easing: function (t) {
-        return t < 0.5
-          ? 4 * t * t * t
-          : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-      },
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
     gsap.to(coverRef.current, {
       duration: 1.2,
       y: "-100%",

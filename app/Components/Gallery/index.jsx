@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import { firstRow, secondRow, thirdRow } from "@/app/Data/imageData";
 import gsap from "gsap";
 import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 import { useRef } from "react";
 
 const Gallery = () => {
@@ -11,6 +12,7 @@ const Gallery = () => {
   const plane2 = useRef(null);
   const plane3 = useRef(null);
 
+  const currentPath = usePathname();
   const t = useTranslations("Header");
 
   let requestAnimationFrameId = null;
@@ -19,6 +21,9 @@ const Gallery = () => {
   const easing = 0.05;
 
   const speed = 0.01;
+
+  const segments = currentPath.split("/");
+  const locale = segments[1];
 
   const managePlane = (e) => {
     const { movementX, movementY } = e;
@@ -95,7 +100,7 @@ const Gallery = () => {
         </a>
       </div>
 
-      <a className={styles.text} href="/gallery">
+      <a className={styles.text} href={`/${locale}/gallery`}>
         {t("gallery")}
       </a>
     </section>

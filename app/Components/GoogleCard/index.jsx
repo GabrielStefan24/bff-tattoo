@@ -56,12 +56,7 @@ const CarouselSize = () => {
       text: "Great service and amazing quality.",
       date: "2021-08-15",
     },
-    {
-      author: "John Doe",
-      rating: 5,
-      text: "Great service and amazing quality.Great service and amazing quality.Great service and amazing quality.Great service and amazing quality.Great service and amazing quality.Great service and amazing quality.Great service and amazing quality.Great service and amazing quality.",
-      date: "2021-08-15",
-    },
+ 
   ];
   return (
     <section className={styles.container}>
@@ -75,7 +70,7 @@ const CarouselSize = () => {
         <CarouselContent>
           {reviews.map((review, index) => (
             <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
-              <div className="p-1">
+              <div className="p-2">
                 <Card>
                   <CardContent className="flex aspect-square items-center justify-center">
                     <GoogleReviewCard review={review} />

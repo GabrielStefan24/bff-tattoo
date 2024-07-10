@@ -8,34 +8,35 @@ import Gallery from "../Components/Gallery";
 import Lenis from "@studio-freight/lenis";
 import Preloader from "../Components/Preloader";
 import CarouselSize from "../Components/GoogleCard";
-
 import Faq from "../Components/Faq";
+import Contact from "../Components/Contact";
+import Navbar from "../Components/Navbar";
 
 export default function Home() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const lenis = new Lenis({
-      lerp: 0.05,
-      easing: function (t) {
-        return t < 0.5
-          ? 4 * t * t * t
-          : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-      },
-    });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    // Checking localStorage
+    const showPreloaderKey = "showPreloader";
+    const lastVisit = localStorage.getItem(showPreloaderKey);
+    const currentDate = new Date();
+    const expiryDate = lastVisit
+      ? new Date(JSON.parse(lastVisit).expiry)
+      : null;
 
-    requestAnimationFrame(raf);
+    if (!lastVisit || currentDate > expiryDate) {
+      // No localStorage found or expiry date has passed
+      setLoading(true);
 
-    const hasLoadingBeenShown = sessionStorage.getItem("loadingShown");
-
-    if (hasLoadingBeenShown === "true") {
-      setLoading(false);
+      // Set new expiry date for 24 hours from now
+      const tomorrow = new Date();
+      tomorrow.setDate(currentDate.getDate() + 1);
+      localStorage.setItem(
+        showPreloaderKey,
+        JSON.stringify({ expiry: tomorrow })
+      );
     } else {
-      sessionStorage.setItem("loadingShown", "true");
+      setLoading(false);
     }
   }, []);
 
@@ -45,6 +46,7 @@ export default function Home() {
         <Preloader setLoading={setLoading} />
       ) : (
         <>
+          <Navbar></Navbar>
           <Hero />
           <About />
           <Artists />
@@ -52,6 +54,7 @@ export default function Home() {
           <Gallery />
           <Faq />
           <CarouselSize />
+          <Contact></Contact>
         </>
       )}
     </main>

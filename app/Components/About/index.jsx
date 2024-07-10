@@ -24,7 +24,7 @@ const About = () => {
       scrollTrigger: {
         trigger: container.current,
         start: "top bottom",
-        end: " top center",
+        end: " top bottom",
         scrub: 0.5,
       },
     });

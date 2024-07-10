@@ -1,4 +1,4 @@
-import "../../globals.css";
+import "../../../globals.css";
 import { Inter } from "next/font/google";
 
 import { NextIntlClientProvider } from "next-intl";
@@ -6,8 +6,8 @@ const inter = Inter({ subsets: ["latin"] });
 import { notFound } from "next/navigation";
 import { headers } from "next/headers";
 import { useLocale, useMessages } from "next-intl";
-import Navbar from "../Components/Navbar";
-import Contact from "../Components/Contact";
+import Navbar from "../../Components/Navbar";
+import Contact from "../../Components/Contact";
 
 export const metadata = {
   title: "Black Flag Tatto Studio",
@@ -32,9 +32,11 @@ export default function RootLayout({ children, params }) {
   return (
     <html lang={locale}>
       <body className={inter.className}>
+        <Navbar></Navbar>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <Contact></Contact>
       </body>
     </html>
   );
