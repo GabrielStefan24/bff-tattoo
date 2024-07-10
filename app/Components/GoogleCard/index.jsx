@@ -50,13 +50,6 @@ const CarouselSize = () => {
       text: "Great service and amazing quality.",
       date: "2021-08-15",
     },
-    {
-      author: "John Doe",
-      rating: 5,
-      text: "Great service and amazing quality.",
-      date: "2021-08-15",
-    },
- 
   ];
   return (
     <section className={styles.container}>

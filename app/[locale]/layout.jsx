@@ -31,7 +31,7 @@ export default function RootLayout({ children, params }) {
 
   return (
     <html lang={locale}>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning={true}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
