@@ -4,8 +4,10 @@ export const artistData = [
     src: "/Eduard.webp",
     src2: "/Eduard.webp",
     path: "Eduard",
+    internationalization: "eduard",
   },
   {
+    internationalization: "mihaela",
     name: "Mihaela Maier",
     src: "/Mihaela.webp",
     src2: "/Mihaela.webp",
@@ -16,5 +18,6 @@ export const artistData = [
     src: "/Radu.webp",
     src2: "/Radu.webp",
     path: "Radu",
+    internationalization: "radu",
   },
 ];

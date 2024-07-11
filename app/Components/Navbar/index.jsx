@@ -8,10 +8,11 @@ import { opacity, slideUp, linkVariants } from "./anim";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { Link as LocaleChange } from "../../../navigation";
 
 const Navbar = () => {
   const t = useTranslations("Header");
-  const [isPhone, setIsPhone] = useState(false);
+  const [isPhone, setIsPhone] = useState(true);
   const [initialHeight, setInitialHeight] = useState(null);
   const [isActive, setIsActive] = useState(false);
   const currentPath = usePathname();
@@ -19,15 +20,12 @@ const Navbar = () => {
   const router = useRouter();
 
   useEffect(() => {
+    // Check the window width after the component mounts
     const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setIsPhone(true);
-      } else {
-        setIsPhone(false);
-      }
+      setIsPhone(window.innerWidth < 768);
     };
 
-    handleResize();
+    handleResize(); // Set the initial state
 
     window.addEventListener("resize", handleResize);
 
@@ -43,6 +41,15 @@ const Navbar = () => {
 
   const segments = currentPath.split("/");
   const locale = segments[1];
+
+  const removeLocaleFromPath = (path) => {
+    return path.replace(/^\/[a-z]{2}(\/|$)/, "/");
+  };
+
+  const isActiveLocale = (locale) => {
+    const currentLocale = currentPath.match(/^\/([a-z]{2})(?=\/|$)/)?.[1];
+    return currentLocale === locale;
+  };
 
   const isActiveLink = (href) => {
     const normalizedHref = `/${locale}${href}`;
@@ -130,19 +137,46 @@ const Navbar = () => {
             <span>{new Date().getFullYear()}</span>
           </div>
         )}
-        <div className={styles.menu} onMouseDown={() => setIsActive(!isActive)}>
+        <div className="flex gap-10">
+          <div className=" flex gap-2">
+            <LocaleChange
+              href={removeLocaleFromPath(currentPath)}
+              locale="ro"
+              style={isActiveLocale("ro") ? { color: "#ff4d00" } : {}}
+            >
+              RO
+            </LocaleChange>
+            <LocaleChange
+              href={removeLocaleFromPath(currentPath)}
+              locale="en"
+              style={isActiveLocale("en") ? { color: "#ff4d00" } : {}}
+            >
+              EN
+            </LocaleChange>
+          </div>
           <div
-            className={`${styles.burgerIcon} ${
-              isActive ? styles.burgerActive : ""
-            }`}
-          ></div>
-          <div className={styles.label}>
-            <motion.p variants={opacity} animate={isActive ? "open" : "closed"}>
-              {t("close")}
-            </motion.p>
-            <motion.p variants={opacity} animate={isActive ? "closed" : "open"}>
-              {t("menu")}
-            </motion.p>
+            className={styles.menu}
+            onMouseDown={() => setIsActive(!isActive)}
+          >
+            <div
+              className={`${styles.burgerIcon} ${
+                isActive ? styles.burgerActive : ""
+              }`}
+            ></div>
+            <div className={styles.label}>
+              <motion.p
+                variants={opacity}
+                animate={isActive ? "open" : "closed"}
+              >
+                {t("close")}
+              </motion.p>
+              <motion.p
+                variants={opacity}
+                animate={isActive ? "closed" : "open"}
+              >
+                {t("menu")}
+              </motion.p>
+            </div>
           </div>
         </div>
       </div>

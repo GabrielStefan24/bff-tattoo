@@ -10,47 +10,11 @@ import {
 } from "@/components/ui/carousel";
 import GoogleReviewCard from "./Card";
 import { useTranslations } from "next-intl";
+import { reviews } from "./reviews";
 
 const CarouselSize = () => {
   const t = useTranslations("Index");
-  const reviews = [
-    {
-      author: "John Doe",
-      rating: 5,
-      text: "Great service and amazing quality.",
-      date: "2021-08-15",
-    },
-    {
-      author: "John Doe",
-      rating: 5,
-      text: "Great service and amazing quality.",
-      date: "2021-08-15",
-    },
-    {
-      author: "John Doe",
-      rating: 5,
-      text: "Great service and amazing quality.",
-      date: "2021-08-15",
-    },
-    {
-      author: "John Doe",
-      rating: 5,
-      text: "Great service and amazing quality.",
-      date: "2021-08-15",
-    },
-    {
-      author: "John Doe",
-      rating: 5,
-      text: "Great service and amazing quality.",
-      date: "2021-08-15",
-    },
-    {
-      author: "John Doe",
-      rating: 5,
-      text: "Great service and amazing quality.",
-      date: "2021-08-15",
-    },
-  ];
+
   return (
     <section className={styles.container}>
       <h1>{t("review")}</h1>
@@ -58,11 +22,11 @@ const CarouselSize = () => {
         opts={{
           align: "start",
         }}
-        className="w-full max-w-[80%] mx-auto mt-20"
+        className="w-full max-w-[70%] mx-auto mt-20"
       >
         <CarouselContent>
           {reviews.map((review, index) => (
-            <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4">
+            <CarouselItem key={index} className="md:basis-1/3 lg:basis-1/4 hover:scale-105 transition-all">
               <div className="p-2">
                 <Card>
                   <CardContent className="flex aspect-square items-center justify-center">

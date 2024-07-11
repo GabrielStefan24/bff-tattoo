@@ -1,0 +1,73 @@
+export const reviews = [
+  {
+    author: "Gabriel Sirbu",
+    rating: 5,
+    rating: "5/5 ⭐⭐⭐⭐⭐",
+    src: "/reviews/gabrielSirbu.jpg",
+    text: "Sunt mega încântat de tatuajul pe care l-am făcut la ei. Oamenii de acolo sunt foarte de treabă și am avut o experiență super de la început până la sfârșit. Eduard Stancu, artistul la care m-am tatuat, e băiat de treabă. Știe exact ce face și mi-a explicat tot procesul pe parcurs. A fost super atent la ce vreau și tatuajul a ieșit fix cum mi-l imaginam. Recomand cu încredere.",
+  },
+  {
+    author: "Bianca Vlad",
+    rating: 5,
+    rating: "5/5 ⭐⭐⭐⭐⭐",
+    src: "/reviews/biancaVlad.png",
+    text: "De fiecare dată când vin aici, am o experiență minunată. Artiștii sunt extrem de talentați și dacă nu ești sigur ce tatuaj îți dorești, sunt aici să creeze ceva original doar pentru tine. O recomand cu căldură pe Mihaela, de fiecare dată mă tatuez la ea.",
+  },
+  {
+    author: "Alexandru Serban",
+    rating: 5,
+    rating: "5/5 ⭐⭐⭐⭐⭐",
+    src: "/reviews/alexandruSerban.png",
+    text: "Întreaga experiență a fost confortabilă și primitoare. Mihaela a reușit să capteze designurile pe care mi le doream într-un stil cu adevărat frumos.",
+  },
+  {
+    author: "Robert Cristian",
+    rating: 5,
+    rating: "5/5 ⭐⭐⭐⭐⭐",
+    src: "/reviews/robertCristian.png",
+    text: "Din momentul în care am intrat în Black Flag Tattoo Studio, am știut că voi avea parte de o experiență extraordinară. Atmosfera a fost primitoare și avea un vibe distinct care m-a făcut să mă simt imediat în largul meu.",
+  },
+  {
+    author: "Patrick Garle",
+    rating: 5,
+    rating: "5/5 ⭐⭐⭐⭐⭐",
+    src: "/reviews/patrickGarle.png",
+    text: "The studio is super nice, the owner is really friendly and also a really good realistic artist. I got a back piece from him and it is amazing. The atmosphere in the studio is super comfortable, he takes care of everything and everything is super hygienic.",
+  },
+  {
+    author: "Ruxandra Scripcariu",
+    rating: 5,
+    rating: "5/5 ⭐⭐⭐⭐⭐",
+    src: "/reviews/ruxandraScripcariu.png",
+    text: "Un loc foarte cool, recomand cu siguranță 💖 Am fost la Mihaela Maier și a făcut o treabă extraordinară. Proprietarul este foarte prietenos și de ajutor 🥂",
+  },
+  {
+    author: "Irina Frigioiu",
+    rating: 5,
+    rating: "5/5 ⭐⭐⭐⭐⭐",
+    src: "/reviews/irinaFrigioiu.png",
+    text: "Salon de tatuaje remarcabil! Talentul lui Eduard este extraordinar și a creat un tatuaj uimitor din ideea mea vagă. Este profesionist și asigură o experiență confortabilă. Sunt foarte încântată de tatuajul meu și îl recomand cu căldură pe Eduard oricui dorește să se tatueze!",
+  },
+  {
+    author: "Catalin Maftei",
+    rating: 5,
+    rating: "5/5 ⭐⭐⭐⭐⭐",
+    src: "/reviews/catalinMaftei.png",
+    text: "Ar putea fi cel mai bun studio de tatuaje din București. Eduard a format o echipă foarte talentată și este el însuși un artist de tatuaje foarte priceput și experimentat. Mi-a făcut un cover up pe tot brațul și îl ador!",
+  },
+  {
+    author: "Andi Gruianu",
+    rating: 5,
+    rating: "5/5 ⭐⭐⭐⭐⭐",
+    src: "/reviews/andiGruianu.png",
+    text: "Am venit din Anglia pentru a-mi face tatuajul la unul dintre artiștii lor de tatuaje și sunt foarte mulțumit de rezultat, recomand cu căldură, oameni talentați și profesioniști!!",
+  },
+
+  {
+    author: "Gram Tattooartist",
+    rating: 5,
+    rating: "5/5 ⭐⭐⭐⭐⭐",
+    src: "/reviews/gramTattoo.png",
+    text: "Best in Bucharest. Professionals and really cool people! As an artist and customer I recommend it for sure!!",
+  },
+];
