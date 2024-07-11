@@ -13,7 +13,7 @@ import Contact from "../Components/Contact";
 import Navbar from "../Components/Navbar";
 
 export default function Home() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Checking localStorage

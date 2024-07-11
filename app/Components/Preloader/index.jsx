@@ -14,7 +14,6 @@ const Preloader = () => {
 
   return (
     <>
-      (
       <>
         <motion.section
           key="section"

@@ -52,7 +52,7 @@ export const reviews = [
     author: "Catalin Maftei",
     rating: 5,
     rating: "5/5 ⭐⭐⭐⭐⭐",
-    src: "/reviews/catalinMaftei.png",
+    src: "/reviews/CatalinMaftei.png",
     text: "Ar putea fi cel mai bun studio de tatuaje din București. Eduard a format o echipă foarte talentată și este el însuși un artist de tatuaje foarte priceput și experimentat. Mi-a făcut un cover up pe tot brațul și îl ador!",
   },
   {
