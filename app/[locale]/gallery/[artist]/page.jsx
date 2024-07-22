@@ -5,9 +5,9 @@ import { usePathname } from "next/navigation";
 import { opacity } from "../variants";
 import { motion } from "framer-motion";
 import gsap from "gsap";
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useEffect, useState } from "react";
 import Lenis from "@studio-freight/lenis";
-import { firstRow } from "@/app/Data/imageData";
+import { firstRow, secondRow, thirdRow } from "@/app/Data/imageData";
 import { useTranslations } from "next-intl";
 
 const Artist = () => {
@@ -15,6 +15,7 @@ const Artist = () => {
   const coverRef = useRef(null);
   const textRef = useRef(null);
   const carouselRef = useRef(null);
+  const [images, setImages] = useState([]);
 
   const t = useTranslations("About");
   useLayoutEffect(() => {
@@ -34,6 +35,22 @@ const Artist = () => {
 
   const currentArtist = pathname.split("/").pop();
   const data = artistData.find((artist) => artist.path === currentArtist);
+
+  useEffect(() => {
+    switch (currentArtist) {
+      case "Mihaela":
+        setImages(firstRow);
+        break;
+      case "Radu":
+        setImages(secondRow);
+        break;
+      case "Eduard":
+        setImages(thirdRow);
+        break;
+      default:
+        setImages([]);
+    }
+  }, [currentArtist]);
 
   return (
     <>
@@ -64,7 +81,7 @@ const Artist = () => {
           dragConstraints={carouselRef}
           className={styles.innerCarousel}
         >
-          {firstRow.map((img, index) => (
+          {images.map((img, index) => (
             <div key={index} className={styles.carouselImg}>
               <img src={img.src} alt="image of a tattoo" />
             </div>
