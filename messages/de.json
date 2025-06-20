@@ -1,0 +1,61 @@
+{
+  "Index": {
+    "pushBoundaries": "Wir erweitern die Grenzen der Tattookunst und wagen uns dann noch weiter vor, nur aus reiner Freude daran.",
+    "teamOfSpecialists": "Wir sind ein Team von Spezialisten, das Designs in einem breiten Spektrum von Stilen und Komplexitäten entwirft. Wir stechen nicht nur Tinte, wir zeichnen mit chirurgischer Präzision und schaffen außergewöhnliche Meisterwerke auf der Haut.",
+    "ourStudio": "UNSER STUDIO",
+    "schedule": "ZEITPLAN",
+    "address": "ADRESSE",
+    "mondaySaturday": "Montag - Samstag 10:30 - 18:00",
+    "sundayClosed": "Sonntag: Geschlossen",
+    "contact": "KONTAKT",
+    "coolArt": "WIR MACHEN COOLE KUNST, DIE FÜR IMMER HÄLT.",
+    "review": "BEWERTUNGEN"
+  },
+  "Impressum": {
+    "studioNameLabel": "Studioname:",
+    "studioNameValue": "Black Flag Tattoo Studio",
+    "operatorLabel": "Betreiber / Verantwortliches Unternehmen:",
+    "operatorName": "NeMa GmbH",
+    "operatorAddress1": "Hohnerstraße 25",
+    "operatorAddress2": "70469 Stuttgart",
+    "operatorCountry": "Deutschland",
+    "registerLabel": "Handelsregister:",
+    "registerCourt": "Eingetragen beim Amtsgericht Stuttgart",
+    "registerNumber": "HRB 799155",
+    "vatLabel": "Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:",
+    "vatNumber": "DE 453464257",
+    "contentResponsibleLabel": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:",
+    "contentResponsibleName": "NeMa GmbH"
+  },
+  "Gallery": {
+    "choose": "WÄHLEN SIE IHREN KÜNSTLER"
+  },
+  "Header": {
+    "socialMedia": "SOZIALE MEDIEN",
+    "menu": "MENÜ",
+    "close": "SCHLIESSEN",
+    "home": "STARTSEITE",
+    "gallery": "GALERIE",
+    "contact": "KONTAKT",
+    "getInTouch": "KONTAKT AUFNEHMEN"
+  },
+  "FAQ": {
+    "howPrice": "Wie bestimmen wir den Preis für jedes Tattoo?",
+    "howPriceAnswer": "Wir berechnen den Preis basierend auf der Größe und Komplexität jedes Tattoos. Senden Sie uns Ihre Ideen oder einige inspirierende Bilder, und wir werden Ihnen eine Preisspanne vorschlagen, die zu Ihrem Projekt passt.",
+    "prepareAppointment": "Wie sollte ich mich auf meinen Tattootermin vorbereiten?",
+    "prepareAppointmentAnswer": "Das Wichtigste vor Ihrem Termin ist, dass Sie gut ausgeruht und hydriert sind und bequeme Kleidung tragen. Vermeiden Sie 24 Stunden vor Ihrer Sitzung Alkohol, übermäßiges Koffein und alle Substanzen, die Ihr Blut verdünnen könnten.",
+    "bookAppointment": "Wie buche ich einen Termin?",
+    "bookAppointmentAnswer": "Sie können ganz einfach einen Termin buchen, indem Sie uns direkt über WhatsApp, Instagram oder Facebook kontaktieren. Klicken Sie auf die Kontaktoptionen auf unserer Website oder unseren Social-Media-Seiten.",
+    "appointmentWaitTime": "Wie lange dauert es bis zu meinem Termin?",
+    "appointmentWaitTimeAnswer": "Wir planen Termine je nach Verfügbarkeit des Künstlers und Ihren spezifischen Bedürfnissen. In der Regel kann die Wartezeit je nach Terminkalender des Künstlers zwischen einigen Tagen und einigen Wochen variieren.",
+    "coverUps": "Machen Sie auch Cover-ups?",
+    "coverUpsAnswer": "Ja, wir sind auf Cover-ups spezialisiert. Der Erfolg eines Cover-ups hängt vom Alter, Design und der Farbsättigung des vorhandenen Tattoos ab. Bitte konsultieren Sie unsere Künstler, um Ihre Möglichkeiten zu besprechen.",
+    "messageContent": "Was sollte die Nachricht bei der Buchung eines Termins enthalten?",
+    "messageContentAnswer": "Bitte beschreiben Sie bei der Buchung Ihre Tattoo-Idee, geben Sie die mögliche Platzierung und Größe an und ob Sie Schwarz-Weiß oder Farbe bevorzugen. Wenn es sich um ein Cover-up handelt, erwähnen Sie dies bitte."
+  },
+  "About": {
+    "radu": "Radu Ruse ist ein außergewöhnlicher Tätowierer, der für seine Meisterschaft in der Schaffung hyperrealistischer Tattoos bekannt ist. Mit einer tiefen Leidenschaft für die bildende Kunst begann Radu seine künstlerische Reise mit einem Studium der bildenden Künste, wo er seine technischen Fähigkeiten entwickelte und seinen ästhetischen Sinn verfeinerte. Seine akademische Ausbildung verleiht ihm ein tiefes Verständnis für Proportionen, Details sowie Licht- und Schattenspiele, die für die Schaffung beeindruckend realistischer Tattoos unerlässlich sind. Radu empfängt seine Kunden mit Professionalität und Einfühlungsvermögen und stellt sicher, dass jedes Tattoo mit Respekt und dem Engagement behandelt wird, die Erwartungen zu übertreffen.",
+    "mihaela": "Mihaela Maier ist eine außergewöhnliche Tätowiererin, die sich auf traditionelle Tattoos spezialisiert hat, sowohl in Farbe als auch in Schwarz und Grau. Mit einer soliden akademischen Ausbildung in den bildenden Künsten kombiniert Mihaela gekonnt traditionelle Techniken mit einer modernen künstlerischen Vision und schafft Tattoos, die wahre Kunstwerke sind. Ihr Studium vermittelt ihr eine starke technische und konzeptionelle Grundlage, die es ihr ermöglicht, jedes Tattoo mit besonderer Liebe zum Detail und einem tiefen Verständnis für Komposition und Farbe anzugehen.",
+    "eduard": "Eduard Stancu ist der Gründer des Black Flag Tattoo Studios und ein Tätowierer mit über 8 Jahren internationaler Erfahrung. Spezialisiert auf realistische, surreale und geometrische Tattoos, ist Eduard für seine außergewöhnlichen Fähigkeiten und seine grenzenlose Kreativität bekannt. Seine internationale Erfahrung hat es ihm ermöglicht, seine Techniken zu perfektionieren und einen einzigartigen Stil zu entwickeln, der von einer vielfältigen und anspruchsvollen Kundschaft geschätzt wird. Bei Black Flag Tattoo fördert Eduard eine professionelle und freundliche Umgebung, in der jeder Kunde mit Aufmerksamkeit und Respekt behandelt wird."
+  }
+}

@@ -9,7 +9,9 @@
         "sundayClosed": "Duminică: Închis",
         "contact": "CONTACT",
         "coolArt": "WE MAKE COOL ART THAT LASTS FOREVER.",
-        "review": "RECENZII"
+        "review": "RECENZII",
+        "address1" : "Strada Știrbei Vodă 83",
+        "address2" : "București 010124"
     },
     "Gallery": {
         "choose": "ALEGEȚI-VĂ ARTISTUL"

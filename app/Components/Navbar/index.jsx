@@ -153,6 +153,13 @@ const Navbar = () => {
             >
               EN
             </LocaleChange>
+            <LocaleChange
+              href={removeLocaleFromPath(currentPath)}
+              locale="de"
+              style={isActiveLocale("de") ? { color: "#ff4d00" } : {}}
+            >
+              DE
+            </LocaleChange>
           </div>
           <div
             className={styles.menu}

@@ -1,19 +1,21 @@
 .footer {
-  height: 20vw;
+  min-height: 20vw;
   color: white;
   border-top: 1px solid white;
   width: 100%;
   margin-top: 20vw;
-    @media(min-width:768px){
-        height: 10vw;
-        margin-top: 10vw;
-    }
-    @media(min-width:1920px){
-        height: 5vw;
-        margin-top: 5vw;
-    }
+  // other styles...
+  @media (min-width: 768px) {
+    min-height: 10vw;
+    margin-top: 10vw;
+  }
+  @media (min-width: 1920px) {
+    min-height: 5vw;
+    margin-top: 5vw;
+  }
+
   .container {
-    width: min(100vw, 1440px);
+    width: min(100%, 1440px);
     margin: 0 auto;
     padding: max(2rem, 2vw);
     display: flex;
@@ -22,26 +24,31 @@
     @media (max-width: 768px) {
       flex-direction: column;
       justify-content: center;
-      gap: 1rem;
+      gap: 2rem;
       text-align: center;
     }
-    p,
-    span,
-    a {
+
+    // Base styles for all text
+    p, span, a, .impressumLabel, .impressumValue {
       font-size: max(18px, 1vw);
     }
+
     p {
       color: #ff4d00;
       font-family: Basement;
     }
+
     span {
       display: block;
     }
+
     a {
       text-decoration: none;
       color: white;
     }
-    .adress,
+
+    // Columns for RO and EN locales
+    .address,
     .schedule,
     .contact {
       display: flex;
@@ -49,4 +56,42 @@
       gap: 1rem;
     }
   }
+}
+
+/* --- UNIFIED STYLES FOR THE IMPRESSUM BLOCK --- */
+.impressum {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.impressumSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex: 1;
+  min-width: 200px;
+
+  @media (max-width: 768px) {
+    text-align: left;
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+.impressumLabel {
+  font-family: Basement;
+  color: #ff4d00;
+}
+
+.impressumValue {
+  line-height: 1.5;
+  color: white;
 }
